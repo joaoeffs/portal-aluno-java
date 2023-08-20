@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: portal-aluno
+    profiles:
+      active:
+        - dev
+
   datasource:
     url: jdbc:postgresql://localhost:5432/portal-aluno?currentSchema=public
     username: postgres
@@ -32,3 +38,14 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+
+springdoc:
+  default-produces-media-type: application/json
+  swagger-ui:
+    display-request-duration: true
+    doc-expansion: none
+    groups-order: DESC
+    operationsSorter: alpha
+    tagsSorter: alpha
+    path: /swagger-ui.html
+    title: Portal Aluno
