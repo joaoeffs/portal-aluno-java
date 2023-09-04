@@ -27,33 +27,39 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 * Essa arquitetura permite uma separação eficiente de responsabilidades entre operações de leitura e escrita, visando melhor desempenho e escalabilidade.
 
 # Requisitos do Projeto
-Requisitos Funcionais:
-1. Cadastro de Usuários:
-   * Descrição: O sistema deve permitir que os usuários se cadastrem e façam login de forma segura, atribuindo-lhes funções de ADMINISTRADOR, PROFESSOR ou ALUNO.
-   * Funcionalidades:
+**Requisitos Funcionais:**
+
+**1. Cadastro de Usuários**:
+   * **Descrição**: O sistema deve permitir que os usuários se cadastrem e façam login de forma segura, atribuindo-lhes funções de ADMINISTRADOR, PROFESSOR ou ALUNO.
+   * **Funcionalidades**:
      * Registro de usuário.
      * Autenticação segura.
      * Atribuição de funções (ADMINISTRADOR, PROFESSOR, ALUNO) durante o registro.
-2. Cadastro de Turmas e Disciplinas:
-   * Descrição: O sistema deve possibilitar que professores criem turmas, associem disciplinas a elas e adicionem alunos às turmas.
-   * Funcionalidades:
+       
+**2. Cadastro de Turmas e Disciplinas:**
+   * **Descrição**: O sistema deve possibilitar que professores criem turmas, associem disciplinas a elas e adicionem alunos às turmas.
+   * **Funcionalidades**:
      * Criação e alteração de turmas.
      * Associação de disciplinas a turmas.
      * Adição de alunos a turmas específicas.
-3. Registro de Notas:
-   * Descrição: O sistema deve fornecer uma ferramenta para professores inserirem notas dos alunos em cada disciplina.
-   * Funcionalidades:
+       
+**3. Registro de Notas:**
+   * **Descrição**: O sistema deve fornecer uma ferramenta para professores inserirem notas dos alunos em cada disciplina.
+   * **Funcionalidades**:
      * Painel de administração de notas.
      * Inserção de notas por disciplina.
-4. Visualização de Notas:
-   * Descrição: O sistema deve permitir que estudantes visualizem suas notas por disciplina, incluindo média parcial e final.
-   * Funcionalidades:
+       
+**4. Visualização de Notas:**
+   * **Descrição**: O sistema deve permitir que estudantes visualizem suas notas por disciplina, incluindo média parcial e final.
+   * **Funcionalidades**:
      * Painel do aluno para visualização de notas.
    
-Requisitos Não Funcionais:
-1. Segurança e Privacidade:
+**Requisitos Não Funcionais:**
+
+**1. Segurança e Privacidade:**
    * Descrição: O sistema deve garantir a segurança dos dados dos alunos e cumprir regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
-2. Testes e Validação:
+     
+**2. Testes e Validação:**
    * Descrição: O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
 
 # Modelagem do Projeto
