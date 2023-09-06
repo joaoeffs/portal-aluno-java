@@ -5,9 +5,9 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 1. Cadastro de Usuários:
    * Desenvolvimento de um sistema de autenticação para os usuários.
    * Roles de acesso ( ADMINISTRADOR, PROFESSOR, ALUNO ).
-2. Cadastro de Turmas e Disciplinas:
-   * Implementação de funcionalidades para que os professores possam criar turmas e associar disciplinas a elas.
-   * Permitir a adição de alunos a turmas específicas.
+2. Cadastro Disciplinas:
+   * Implementação de funcionalidades para que os professores possam criar disciplinas e associnar alunos a elas.
+   * Permitir a adição de alunos a disciplina específicas.
 3. Cadastro de Notas:
    * Criação de um painel de administração para professores inserirem as notas dos alunos em cada disciplina.
 4. Visualização de Notas:
@@ -36,12 +36,11 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
      * Autenticação segura.
      * Atribuição de funções (ADMINISTRADOR, PROFESSOR, ALUNO) durante o registro.
        
-**2. Cadastro de Turmas e Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que professores criem turmas, associem disciplinas a elas e adicionem alunos às turmas.
+**2. Cadastro de Disciplinas:**
+   * **Descrição**: O sistema deve possibilitar que professores criem disciplinas e adicionem alunosa elas.
    * **Funcionalidades**:
-     * Criação e alteração de turmas.
-     * Associação de disciplinas a turmas.
-     * Adição de alunos a turmas específicas.
+     * Criação e alteração de disciplinas.
+     * Adição de alunos a disciplinas específicas.
        
 **3. Registro de Notas:**
    * **Descrição**: O sistema deve fornecer uma ferramenta para professores inserirem notas dos alunos em cada disciplina.
@@ -57,9 +56,9 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 **Requisitos Não Funcionais:**
 
 **1. Segurança e Privacidade:**
-   * Descrição: O sistema deve garantir a segurança dos dados dos alunos e cumprir regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
+   * **Descrição:** O sistema deve garantir a segurança dos dados dos alunos e cumprir regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
      
 **2. Testes e Validação:**
-   * Descrição: O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
+   * **Descrição:** O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
 
 # Modelagem do Projeto
