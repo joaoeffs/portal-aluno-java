@@ -8,15 +8,18 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 2. Cadastro Disciplinas:
    * Implementação de funcionalidades para que os professores possam criar disciplinas e associnar alunos a elas.
    * Permitir a adição de alunos a disciplina específicas.
-3. Cadastro de Notas:
+3. Vincular Alunos a Disciplinas:
+   * Implementação de funcionalidade para que os professores consigam vincular os alunos a disciplinas que eles ministrarão.
+4. Cadastro de Notas:
    * Criação de um painel de administração para professores inserirem as notas dos alunos em cada disciplina.
-4. Visualização de Notas:
+   * Permitir a adição de alunos a disciplina específicas.
+5. Visualização de Notas:
    * Criação de um painel do aluno onde os estudantes podem visualizar suas notas.
    * Apresentação das notas por disciplina, com média parcial e final.
-5. Segurança e Privacidade:
+6. Segurança e Privacidade:
    * Garantir a segurança dos dados dos alunos, implementando medidas de criptografia e autenticação segura.
    * Cumprimento de regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
-6. Testes e Validação:
+7. Testes e Validação:
    * Realizar testes unitários e de integração no sistema para garantir seu funcionamento adequado.
      
 # Arquitetura do Projeto
@@ -37,18 +40,22 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
      * Atribuição de funções (ADMINISTRADOR, PROFESSOR, ALUNO) durante o registro.
        
 **2. Cadastro de Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que professores criem disciplinas e adicionem alunosa elas.
+   * **Descrição**: O sistema deve possibilitar que professores criem disciplinas.
    * **Funcionalidades**:
      * Criação e alteração de disciplinas.
+       
+**3. Vincular Alunos a Disciplinas:**
+   * **Descrição**: O sistema deve possibilitar que professores vinculem alunos a disciplinas.
+   * **Funcionalidades**:
      * Adição de alunos a disciplinas específicas.
        
-**3. Registro de Notas:**
+**4. Registro de Notas:**
    * **Descrição**: O sistema deve fornecer uma ferramenta para professores inserirem notas dos alunos em cada disciplina.
    * **Funcionalidades**:
      * Painel de administração de notas.
      * Inserção de notas por disciplina.
        
-**4. Visualização de Notas:**
+**5. Visualização de Notas:**
    * **Descrição**: O sistema deve permitir que estudantes visualizem suas notas por disciplina, incluindo média parcial e final.
    * **Funcionalidades**:
      * Painel do aluno para visualização de notas.
