@@ -68,4 +68,33 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 **2. Testes e Validação:**
    * **Descrição:** O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
 
-# Modelagem do Projeto
+# Metodologia de Organização de Tarefas
+Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para gerenciar o desenvolvimento de software. O FDD é uma metodologia que se concentra na entrega incremental e iterativa de funcionalidades específicas, o que nos permite atender de forma eficaz às necessidades do cliente e manter o controle do progresso do projeto.
+
+## Pacotes de Entrega
+### Pacote 1: Arquitetura e Insfraestrutura do Projeto
+  1. Comunicação entre Backend e Frontend
+  2. Organização do Código
+  3. Documentação do Código
+  4. Pipeline
+  5. Monitoramento de Qualidade
+
+### Pacote 2: Disciplinas, Vinculos de alunos e Notas
+  1. Registrar disciplinas
+  2. Listar disciplinas
+  3. Alterar disciplina
+  4. Deletar disciplina
+  5. Vincular aluno a disciplina
+  6. Listagem de alunos vinculados a disciplina
+  7. Registrar notas
+  8. Listar notas
+  9. Alterar notas
+      
+### Pacote 3: Autenticação e Registro dos Usuários
+  1. Registrar usuário
+  2. Alterar usuário
+  3. Inativar usuário
+  4. Segurança e autenticação
+  5. Anonimização
+
+Para mais informações das tarefas e visualizar o andamento delas, entre no [Board.](https://joao-effting.atlassian.net/jira/software/projects/PA/boards/1)
