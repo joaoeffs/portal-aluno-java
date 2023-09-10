@@ -28,10 +28,6 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
   * Spring boot
   * Maven
 
-## Frontend
-  * Angular 13
-  * Node
-
 Será utilizado como arquitetura o modelo CQRS (Command Query Responsibility Segregation) é uma abordagem que separa a parte de leitura (queries) da parte de escrita (commands) em um sistema.
 ### Como vai funcionar:
   1. Comandos
@@ -43,6 +39,10 @@ Será utilizado como arquitetura o modelo CQRS (Command Query Responsibility Seg
      * Lógica de negócios dentro dessas classes.
 
 A modelagem da arquiteura você pode encontrar aqui, acessando o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/arquitetura/V1.arquitetura-CQRS.png)
+
+## Frontend
+  * Angular 13
+  * Node
 
 
 
