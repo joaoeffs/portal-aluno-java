@@ -23,6 +23,7 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
    * Realizar testes unitários e de integração no sistema para garantir seu funcionamento adequado.
 
 [Diagrama de Classe.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/diagrama-de-classe/V1.diagrama-de-classe.png)
+</br>
 [Diagrama de Sequência.](https://github.com/joaoeffs/portal-aluno-java/tree/main/docs/diagrama-de-sequencia)
      
 # Stack e Arquitetura do Projeto
