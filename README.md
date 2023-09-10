@@ -38,7 +38,7 @@ Será utilizado como arquitetura o modelo CQRS (Command Query Responsibility Seg
      * Classes Java que representam entidades e agregados.
      * Lógica de negócios dentro dessas classes.
 
-A modelagem da arquiteura você pode encontrar aqui, acessando o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/arquitetura/V1.arquitetura-CQRS.png)
+A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/arquitetura/V1.arquitetura-CQRS.png)
 
 ## Frontend
   * Angular 13
