@@ -22,12 +22,31 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
 7. Testes e Validação:
    * Realizar testes unitários e de integração no sistema para garantir seu funcionamento adequado.
      
-# Arquitetura do Projeto
-* O frontend é desenvolvido em Angular 13, com componentes e serviços para a interface do usuário e comunicação com o backend.
-* O backend usa Spring Boot e é dividido em controladores separados para comandos (alterações de dados) e consultas (leitura de dados).
-* Há uma camada de comando para lidar com operações de modificação de dados e uma camada de consulta para responder às solicitações de leitura.
-* A comunicação entre o frontend e o backend ocorre via HTTP/HTTPS, com autenticação JWT e validação de dados.
-* Essa arquitetura permite uma separação eficiente de responsabilidades entre operações de leitura e escrita, visando melhor desempenho e escalabilidade.
+# Stack e Arquitetura do Projeto
+## Backend
+  * Java 17
+  * Spring boot
+  * Maven
+
+## Frontend
+  * Angular 13
+  * Node
+
+Será utilizado como arquitetura o modelo CQRS (Command Query Responsibility Segregation) é uma abordagem que separa a parte de leitura (queries) da parte de escrita (commands) em um sistema.
+### Como vai funcionar:
+  1. Comandos
+     * Classes de comando para representar as operações que alteram o estado do sistema.
+  2. Consultas
+     * Classes de consulta para representar as operações de leitura.
+  3. Modelo do Domínio
+     * Classes Java que representam entidades e agregados.
+     * Lógica de negócios dentro dessas classes.
+
+A modelagem da arquiteura você pode encontrar aqui, acessando o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/arquitetura/V1.arquitetura-CQRS.png)
+
+
+
+Para visualizar o diagrama de classe, acesse o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/diagrama-de-classe/V1.diagrama-de-classe.png)
 
 # Requisitos do Projeto
 **Requisitos Funcionais:**
