@@ -21,6 +21,9 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
    * Cumprimento de regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
 7. Testes e Validação:
    * Realizar testes unitários e de integração no sistema para garantir seu funcionamento adequado.
+
+[Diagrama de Classe.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/diagrama-de-classe/V1.diagrama-de-classe.png)
+[Diagrama de Sequência.](https://github.com/joaoeffs/portal-aluno-java/tree/main/docs/diagrama-de-sequencia)
      
 # Stack e Arquitetura do Projeto
 ## Backend
@@ -43,10 +46,6 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
 ## Frontend
   * Angular 13
   * Node
-
-
-
-Para visualizar o diagrama de classe, acesse o [link.](https://github.com/joaoeffs/portal-aluno-java/blob/main/docs/diagrama-de-classe/V1.diagrama-de-classe.png)
 
 # Requisitos do Projeto
 **Requisitos Funcionais:**
