@@ -18,14 +18,6 @@ public interface RegistrarDisciplinaUseCase {
 
         String codigo;
 
-        UUID usuarioId;
-
-        public static RegistrarDisciplina from(Disciplina disciplina) {
-
-            return RegistrarDisciplina.of(
-                disciplina.getNome(),
-                disciplina.getCodigo(),
-                disciplina.getUsuarioId());
-        }
+        UUID usuario;
     }
 }

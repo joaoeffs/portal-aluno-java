@@ -1,12 +1,12 @@
 package com.joaoeffs.portalalunojava.core.domain.usuario.usecase;
 
+import java.time.LocalDate;
 import java.util.UUID;
+
+import com.joaoeffs.portalalunojava.core.domain.usuario.model.Role.Role;
 
 import lombok.Builder;
 import lombok.Value;
-
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 
 public interface RegistrarUsuarioUseCase {
 
@@ -16,12 +16,20 @@ public interface RegistrarUsuarioUseCase {
     @Builder
     class RegistrarUsuario {
 
-        @Valid
-        @NotNull
+        String nome;
+
+        String sobrebome;
+
+        LocalDate dataNascimento;
+
+        String matricula;
+
+        String email;
+
         String login;
 
-        @Valid
-        @NotNull
         String senha;
+
+        Role role;
     }
 }

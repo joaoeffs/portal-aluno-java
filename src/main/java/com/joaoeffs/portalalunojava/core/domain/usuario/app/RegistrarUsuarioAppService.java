@@ -22,8 +22,14 @@ public class RegistrarUsuarioAppService implements RegistrarUsuarioUseCase {
     public UUID handle(RegistrarUsuario command) {
 
         Usuario usuario = Usuario.builder()
+            .nome(command.getNome())
+            .sobrenome(command.getNome())
+            .dataNascimento(command.getDataNascimento())
+            .matricula(command.getMatricula())
+            .email(command.getEmail())
             .login(command.getLogin())
             .senha(command.getSenha())
+            .role(command.getRole())
             .build();
 
         repository.save(usuario);

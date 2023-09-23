@@ -1,19 +1,24 @@
 package com.joaoeffs.portalalunojava.core.domain.disciplina.model;
 
+import static java.util.Objects.requireNonNull;
 import static lombok.AccessLevel.PRIVATE;
 import static lombok.AccessLevel.PROTECTED;
 
 import java.util.UUID;
 
+import com.joaoeffs.portalalunojava.core.domain.usuario.model.Usuario;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Getter
@@ -24,9 +29,9 @@ import jakarta.persistence.Table;
 @Table(name = "disciplina")
 public class Disciplina {
 
-    @EmbeddedId
+    @Id
     @Column(name = "id")
-    private final UUID id;
+    private UUID id;
 
     @Column(name = "nome")
     private String nome;
@@ -34,7 +39,17 @@ public class Disciplina {
     @Column(name = "codigo")
     private String codigo;
 
-    @OneToMany
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @Column(name = "usuario_id")
+    private UUID usuario;
+
+    public static DisciplinaBuilder builder() {
+        return new DisciplinaBuilder();
+    }
+
+    public Disciplina(DisciplinaBuilder builder) {
+        id = requireNonNull(builder.id);
+        nome = builder.nome;
+        codigo = builder.codigo;
+        usuario = builder.usuario;
+    }
 }

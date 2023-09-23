@@ -32,7 +32,7 @@ public class DisciplinaController {
     @RolesAllowed({ ADMINISTRADOR, PROFESSOR })
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> registrarDisciplina(@RequestBody RegistrarDisciplina command) {
-        var id = registrarDisciplinaService.handle(command.of());
+        var id = registrarDisciplinaService.handle(command);
 
         return ResponseEntity.created(fromCurrentRequest().path("/").path(id.toString()).build().toUri()).build();
     }
