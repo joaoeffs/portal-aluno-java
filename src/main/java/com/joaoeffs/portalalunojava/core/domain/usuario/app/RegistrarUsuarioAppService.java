@@ -29,7 +29,7 @@ public class RegistrarUsuarioAppService implements RegistrarUsuarioUseCase {
             .email(command.getEmail())
             .login(command.getLogin())
             .senha(command.getSenha())
-            .role(command.getRole())
+            .roles(command.getRoles())
             .build();
 
         repository.save(usuario);

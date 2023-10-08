@@ -51,7 +51,7 @@ public class Usuario {
     private String senha;
 
     @Column(name = "role")
-    private Role role;
+    private Role roles;
 
     public static UsuarioBuilder builder() {
         return new UsuarioBuilder();
@@ -66,6 +66,6 @@ public class Usuario {
         this.email = builder.email;
         this.login = requireNonNull(builder.login);
         this.senha = requireNonNull(builder.senha);
-        this.role = builder.role;
+        this.roles = builder.roles;
     }
 }
