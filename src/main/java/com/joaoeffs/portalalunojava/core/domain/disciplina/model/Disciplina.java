@@ -6,19 +6,13 @@ import static lombok.AccessLevel.PROTECTED;
 
 import java.util.UUID;
 
-import com.joaoeffs.portalalunojava.core.domain.usuario.model.Usuario;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Getter
@@ -51,5 +45,12 @@ public class Disciplina {
         nome = builder.nome;
         codigo = builder.codigo;
         usuario = builder.usuario;
+    }
+
+    public DisciplinaBuilderUpdate alterar() {
+        return new DisciplinaBuilderUpdate(id, form -> {
+            nome = form.nome;
+            codigo = form.codigo;
+        });
     }
 }
