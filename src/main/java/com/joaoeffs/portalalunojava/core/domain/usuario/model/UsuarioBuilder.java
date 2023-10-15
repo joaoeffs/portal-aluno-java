@@ -23,7 +23,7 @@ public class UsuarioBuilder {
 
     protected String senha;
 
-    protected Role role;
+    protected Role roles;
 
     public UsuarioBuilder nome(String nome) {
         this.nome = nome;
@@ -61,8 +61,8 @@ public class UsuarioBuilder {
         return this;
     }
 
-    public UsuarioBuilder role(Role role) {
-        this.role = role;
+    public UsuarioBuilder roles(Role roles) {
+        this.roles = roles;
         return this;
     }
 

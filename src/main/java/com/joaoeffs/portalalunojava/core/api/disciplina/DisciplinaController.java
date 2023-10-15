@@ -23,7 +23,7 @@ import jakarta.annotation.security.RolesAllowed;
 @RequiredArgsConstructor
 
 @RestController
-@RequestMapping(path = "api/v1/disciplina", produces = APPLICATION_JSON_VALUE)
+@RequestMapping(path = "api/disciplina", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "disciplina-controller")
 public class DisciplinaController {
 

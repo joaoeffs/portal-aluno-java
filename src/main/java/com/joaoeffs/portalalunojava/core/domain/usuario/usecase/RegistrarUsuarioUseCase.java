@@ -30,6 +30,6 @@ public interface RegistrarUsuarioUseCase {
 
         String senha;
 
-        Role role;
+        Role roles;
     }
 }
