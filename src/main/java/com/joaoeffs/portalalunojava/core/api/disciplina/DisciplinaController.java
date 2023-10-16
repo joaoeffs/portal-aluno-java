@@ -8,6 +8,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,6 +20,8 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.AlterarDiscip
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.AlterarDisciplinaUseCase.AlterarDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisciplinaUseCase;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisciplinaUseCase.RegistrarDisciplina;
+import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RemoverDisciplinaUseCase;
+import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RemoverDisciplinaUseCase.RemoverDisciplina;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -35,6 +38,7 @@ public class DisciplinaController {
 
     private final RegistrarDisciplinaUseCase registrarDisciplinaService;
     private final AlterarDisciplinaUseCase alterarDisciplinaUseCase;
+    private final RemoverDisciplinaUseCase removerDisciplinaUseCase;
 
     @RolesAllowed({ ADMINISTRADOR, PROFESSOR })
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
@@ -47,5 +51,10 @@ public class DisciplinaController {
     @PutMapping("/{id}")
     public void alterarDisciplina(@PathVariable UUID id, @RequestBody AlterarDisciplina command) {
         alterarDisciplinaUseCase.handle(command.from(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public void removerDisciplina(@PathVariable UUID id) {
+        removerDisciplinaUseCase.handle(RemoverDisciplina.from(id));
     }
 }
