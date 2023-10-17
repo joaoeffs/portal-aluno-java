@@ -10,8 +10,6 @@ public class DisciplinaBuilder {
 
     protected String codigo;
 
-    protected UUID usuario;
-
 
     public DisciplinaBuilder nome(String nome) {
         this.nome = nome;
@@ -20,11 +18,6 @@ public class DisciplinaBuilder {
 
     public DisciplinaBuilder codigo(String codigo) {
         this.codigo = codigo;
-        return this;
-    }
-
-    public DisciplinaBuilder usuario(UUID usuario) {
-        this.usuario = usuario;
         return this;
     }
 

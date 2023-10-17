@@ -1,4 +1,4 @@
-CREATE TABLE professor (
+CREATE TABLE aluno (
 
     id                   UUID          NOT NULL,
 
@@ -7,7 +7,8 @@ CREATE TABLE professor (
     data_nascimento	     TIMESTAMP     NOT NULL,
     email                VARCHAR(64)   UNIQUE NOT NULL,
     senha                VARCHAR(16)   NOT NULL,
+    matricula            VARCHAR(20)   NOT NULL,
 
-    CONSTRAINT professor_pk
+    CONSTRAINT aluno_pk
         PRIMARY KEY (id)
 );

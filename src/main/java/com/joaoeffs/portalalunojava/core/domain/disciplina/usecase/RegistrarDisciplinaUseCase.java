@@ -17,7 +17,5 @@ public interface RegistrarDisciplinaUseCase {
         String nome;
 
         String codigo;
-
-        UUID usuario;
     }
 }

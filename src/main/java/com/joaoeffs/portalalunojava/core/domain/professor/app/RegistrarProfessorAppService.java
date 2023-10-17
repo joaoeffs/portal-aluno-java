@@ -21,7 +21,7 @@ public class RegistrarProfessorAppService implements RegistrarProfessorUseCase {
     @Override
     public UUID handle(RegistrarProfessor command) {
 
-        Professor usuario = Professor.builder()
+        Professor professor = Professor.builder()
             .nome(command.getNome())
             .sobrenome(command.getSobrenome())
             .dataNascimento(command.getDataNascimento())
@@ -29,8 +29,8 @@ public class RegistrarProfessorAppService implements RegistrarProfessorUseCase {
             .senha(command.getSenha())
             .build();
 
-        repository.save(usuario);
+        repository.save(professor);
 
-        return usuario.getId();
+        return professor.getId();
     }
 }
