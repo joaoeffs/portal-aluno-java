@@ -33,9 +33,6 @@ public class Disciplina {
     @Column(name = "codigo")
     private String codigo;
 
-    @Column(name = "usuario_id")
-    private UUID usuario;
-
     public static DisciplinaBuilder builder() {
         return new DisciplinaBuilder();
     }
@@ -44,7 +41,6 @@ public class Disciplina {
         id = requireNonNull(builder.id);
         nome = builder.nome;
         codigo = builder.codigo;
-        usuario = builder.usuario;
     }
 
     public DisciplinaBuilderUpdate alterar() {

@@ -9,17 +9,4 @@ public interface ListagemDisciplina {
     String getNome();
 
     String getCodigo();
-
-    Usuario getUsuario();
-
-    interface Usuario {
-
-        UUID getId();
-
-        String getNome();
-
-        String getSobrenome();
-
-        String getMatricula();
-    }
 }

@@ -8,5 +8,5 @@ import com.joaoeffs.portalalunojava.core.domain.professor.model.Professor;
 
 public interface ProfessorDomainRepository extends Repository<Professor, UUID> {
 
-    void save(Professor usuario);
+    void save(Professor professor);
 }
