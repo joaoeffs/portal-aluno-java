@@ -34,7 +34,7 @@ public class DisciplinaQueryController {
     }
 
     @GetMapping("/{id}")
-    public Optional<DisciplinaQuery> findById(@PathVariable UUID id) {
+    public Optional<ListagemDisciplina> findById(@PathVariable UUID id) {
         return disciplinaQueryAppService.findById(id);
     }
 }

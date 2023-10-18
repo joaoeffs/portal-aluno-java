@@ -24,7 +24,7 @@ public class DisciplinaQueryAppService {
         return repository.findAllProjectBy();
     }
 
-    public Optional<DisciplinaQuery> findById(UUID id) {
+    public Optional<ListagemDisciplina> findById(UUID id) {
         return repository.findById(id);
     }
 }
