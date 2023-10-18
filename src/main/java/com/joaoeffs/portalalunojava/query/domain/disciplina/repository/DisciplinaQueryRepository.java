@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 import com.joaoeffs.portalalunojava.query.domain.disciplina.model.DisciplinaQuery;
@@ -16,5 +17,5 @@ public interface DisciplinaQueryRepository extends Repository<DisciplinaQuery, U
 
     List<ListagemDisciplina> findAllProjectBy();
 
-    Optional<DisciplinaQuery> findById(UUID id);
+    Optional<ListagemDisciplina> findById(UUID id);
 }
