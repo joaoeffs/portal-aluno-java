@@ -1,6 +1,5 @@
 package com.joaoeffs.portalalunojava.core.domain.turma.usecase;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import lombok.Builder;
@@ -18,7 +17,7 @@ public interface RegistrarTurmaUseCase {
 
         String nomeAbreviado;
 
-        LocalDate anoLetivo;
+        String anoLetivo;
     }
 
 }
