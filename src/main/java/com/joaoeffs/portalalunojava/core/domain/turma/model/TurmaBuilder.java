@@ -1,6 +1,5 @@
 package com.joaoeffs.portalalunojava.core.domain.turma.model;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 public class TurmaBuilder {
@@ -11,7 +10,7 @@ public class TurmaBuilder {
 
     protected String nomeAbreviado;
 
-    protected LocalDate anoLetivo;
+    protected String anoLetivo;
 
     public TurmaBuilder nome(String nome) {
         this.nome = nome;
@@ -23,7 +22,7 @@ public class TurmaBuilder {
         return this;
     }
 
-    public TurmaBuilder anoLetivo(LocalDate anoLetivo) {
+    public TurmaBuilder anoLetivo(String anoLetivo) {
         this.anoLetivo = anoLetivo;
         return this;
     }

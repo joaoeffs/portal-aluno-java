@@ -2,7 +2,6 @@ package com.joaoeffs.portalalunojava.core.domain.turma.model;
 
 import static java.util.Objects.requireNonNull;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import lombok.AllArgsConstructor;
@@ -34,7 +33,7 @@ public class Turma {
     private String nomeAbreviado;
 
     @Column(name = "ano_letivo")
-    private LocalDate anoLetivo;
+    private String anoLetivo;
 
     public static TurmaBuilder builder() {
         return new TurmaBuilder();
@@ -45,5 +44,13 @@ public class Turma {
         this.nome = builder.nome;
         this.nomeAbreviado = builder.nomeAbreviado;
         this.anoLetivo = builder.anoLetivo;
+    }
+
+    public TurmaBuilderUpdate alterar() {
+        return new TurmaBuilderUpdate(id, form -> {
+            nome = form.nome;
+            nomeAbreviado = form.nomeAbreviado;
+            anoLetivo = form.anoLetivo;
+        });
     }
 }
