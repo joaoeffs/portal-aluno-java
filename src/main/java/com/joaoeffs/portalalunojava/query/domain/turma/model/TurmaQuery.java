@@ -2,12 +2,9 @@ package com.joaoeffs.portalalunojava.query.domain.turma.model;
 
 import java.util.UUID;
 
-import org.hibernate.annotations.Immutable;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,11 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Getter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 
-@Immutable
 @Entity
 @Table(name = "turma")
 public class TurmaQuery {

@@ -2,6 +2,7 @@ package com.joaoeffs.portalalunojava.core.domain.turmadisciplina.repository;
 
 import java.util.UUID;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 import com.joaoeffs.portalalunojava.core.domain.turmadisciplina.model.TurmaDisciplina;
@@ -9,4 +10,7 @@ import com.joaoeffs.portalalunojava.core.domain.turmadisciplina.model.TurmaDisci
 public interface TurmaDisciplinaDomainRepository extends Repository<TurmaDisciplina, UUID> {
 
     void save(TurmaDisciplina turmaDisciplina);
+
+    @Query()
+    void deleteById(UUID id);
 }
