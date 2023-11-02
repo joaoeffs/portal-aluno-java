@@ -9,4 +9,6 @@ import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
 public interface AlunoDomainRepository extends Repository<Aluno, UUID> {
 
     void save(Aluno aluno);
+
+    Aluno findById(UUID id);
 }

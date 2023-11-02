@@ -9,7 +9,7 @@ public interface AlterarDisciplinaUseCase {
 
     UUID handle(AlterarDisciplina command);
 
-    @Value(staticConstructor = "of")
+    @Value
     @Builder
     class AlterarDisciplina {
 

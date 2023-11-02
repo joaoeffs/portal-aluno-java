@@ -5,6 +5,8 @@ import static java.util.Objects.requireNonNull;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import com.joaoeffs.portalalunojava.core.domain.turma.model.Turma;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,8 @@ import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Getter
@@ -45,6 +49,9 @@ public class Aluno {
     @Column(name = "matricula")
     private String matricula;
 
+    @Column(name = "turma_id")
+    private UUID turma;
+
     public static AlunoBuilder builder() {
         return new AlunoBuilder();
     }
@@ -57,5 +64,9 @@ public class Aluno {
         this.email = requireNonNull(builder.email);
         this.senha = requireNonNull(builder.senha);
         this.matricula = builder.matricula;
+    }
+
+    public void vincularTurma(UUID turma) {
+        this.turma = turma;
     }
 }
