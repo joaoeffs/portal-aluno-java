@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.app.AlunoDisciplinaQueryAppService;
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.model.AlunoDisciplinaQuery;
+import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.repository.AlunoDisciplinaQueryRepository;
+import com.joaoeffs.portalalunojava.query.domain.notas.projection.ListagemNotas;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -25,9 +27,15 @@ import lombok.RequiredArgsConstructor;
 public class AlunoDisciplinaQueryController {
 
     private final AlunoDisciplinaQueryAppService alunoDisciplinaQueryAppService;
+    private final AlunoDisciplinaQueryRepository repository;
 
     @GetMapping("/{disciplinaId}")
     public List<AlunoDisciplinaQuery> listarByDisciplina(@PathVariable UUID disciplinaId) {
         return alunoDisciplinaQueryAppService.findByDisciplina(disciplinaId);
+    }
+
+    @GetMapping("/{disciplinaId}/listar-notas")
+    public List<ListagemNotas> listarNotas(@PathVariable UUID disciplinaId) {
+        return repository.listarNotasByDisciplina(disciplinaId);
     }
 }
