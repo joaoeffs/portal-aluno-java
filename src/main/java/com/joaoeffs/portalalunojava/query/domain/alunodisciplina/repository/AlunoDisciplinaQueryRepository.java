@@ -24,7 +24,7 @@ public interface AlunoDisciplinaQueryRepository extends Repository<AlunoDiscipli
         	cast(a.id AS varchar) AS alunoId,
         	a.nome as nome,
          	a.sobrenome as sobrenome,
-         	a.codigo as matricula
+         	a.matricula as matricula
         from
         	aluno_disciplina ad
         left join notas n on
