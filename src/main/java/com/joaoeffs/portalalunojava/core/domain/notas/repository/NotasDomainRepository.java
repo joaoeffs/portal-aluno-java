@@ -9,4 +9,6 @@ import com.joaoeffs.portalalunojava.core.domain.notas.model.Notas;
 public interface NotasDomainRepository extends Repository<Notas, UUID> {
 
     void save(Notas notas);
+
+    Notas findById(UUID id);
 }
