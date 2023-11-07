@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.model.AlunoDisciplinaQuery;
-import com.joaoeffs.portalalunojava.query.domain.notas.projection.ListagemNotas;
+import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.projection.ListagemNotasAlunos;
 
 public interface AlunoDisciplinaQueryRepository extends Repository<AlunoDisciplinaQuery, UUID> {
 
@@ -34,5 +34,5 @@ public interface AlunoDisciplinaQueryRepository extends Repository<AlunoDiscipli
         where
         	ad.disciplina_id = :disciplinaId
         """, nativeQuery = true)
-    List<ListagemNotas> listarNotasByDisciplina(UUID disciplinaId);
+    List<ListagemNotasAlunos> listarNotasByDisciplina(UUID disciplinaId);
 }

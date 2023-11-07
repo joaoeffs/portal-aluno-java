@@ -7,19 +7,11 @@ public interface ListagemNotas {
 
     UUID getId();
 
-    UUID getNotaId();
-
     BigDecimal getN1();
 
     BigDecimal getN2();
 
     BigDecimal getN3();
 
-    UUID getAlunoId();
-
-    String getNome();
-
-    String getSobrenome();
-
-    String getMatricula();
+    UUID getAlunoDisciplina();
 }

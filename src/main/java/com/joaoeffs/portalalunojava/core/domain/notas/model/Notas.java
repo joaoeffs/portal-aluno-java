@@ -46,8 +46,16 @@ public class Notas {
     public Notas(NotasBuilder builder) {
         id = builder.id;
         n1 = builder.n1;
-        n2 = builder.n2;
-        n3 = builder.n3;
+        n2 = BigDecimal.ZERO;
+        n3 = BigDecimal.ZERO;
         alunoDisciplina = builder.alunoDisciplina;
+    }
+
+    public NotasBuilderUpdate alterar() {
+        return new NotasBuilderUpdate(id, form -> {
+            n1 = form.n1;
+            n2 = form.n2;
+            n3 = form.n3;
+        });
     }
 }
