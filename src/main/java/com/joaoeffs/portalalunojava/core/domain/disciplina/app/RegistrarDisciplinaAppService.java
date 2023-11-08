@@ -24,7 +24,6 @@ public class RegistrarDisciplinaAppService implements RegistrarDisciplinaUseCase
         var disciplina = Disciplina.builder()
             .nome(command.getNome())
             .codigo(command.getCodigo())
-            .professor(command.getProfessor())
             .build();
 
         repository.save(disciplina);
