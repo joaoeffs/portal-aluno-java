@@ -20,7 +20,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.AlterarDiscip
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
-public class AlterarDisciplinaUseCaseTest {
+public class AlterarDisciplinaUseCaseIT {
 
     @Autowired
     private DisciplinaDomainRepository repository;

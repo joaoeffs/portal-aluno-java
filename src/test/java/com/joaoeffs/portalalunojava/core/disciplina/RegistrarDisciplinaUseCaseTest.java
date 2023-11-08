@@ -16,7 +16,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisc
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
-public class RegistrarDisciplinaUseCaseIT {
+public class RegistrarDisciplinaUseCaseTest {
 
     private final String URL = "/api/disciplina";
 
