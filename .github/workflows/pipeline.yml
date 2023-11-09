@@ -34,7 +34,7 @@ jobs:
           push: true
           tags: |
             joaoeffs/portalaluno:v1
-            joaoeffs/portalaluno:it
+            joaoeffs/portalaluno:latest
       
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
