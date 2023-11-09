@@ -19,7 +19,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.repository.Disciplina
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
-public class RemoverDisciplinaUseCaseIT {
+public class RemoverDisciplinaUseCaseTest {
 
     @Autowired
     private DisciplinaDomainRepository repository;
