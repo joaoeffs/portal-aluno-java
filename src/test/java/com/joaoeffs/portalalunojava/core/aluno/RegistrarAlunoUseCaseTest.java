@@ -29,9 +29,6 @@ public class RegistrarAlunoUseCaseTest {
     private final String URL = "/api/aluno";
 
     @Autowired
-    private AlunoDomainRepository alunoRepository;
-
-    @Autowired
     private MockMvc mock;
 
     @Autowired
