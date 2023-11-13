@@ -1,12 +1,12 @@
-package com.joaoeffs.portalalunojava.core.alunodisciplina;
+package com.joaoeffs.portalalunojava.core.notas;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +20,23 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
 import com.joaoeffs.portalalunojava.core.domain.aluno.repository.AlunoDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.model.AlunoDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.repository.AlunoDisciplinaDomainRepository;
-import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.usecase.RegistrarAlunoDisciplinaUseCase.RegistrarAlunoDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.model.Disciplina;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.repository.DisciplinaDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.notas.model.Notas;
+import com.joaoeffs.portalalunojava.core.domain.notas.repository.NotasDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.notas.usecase.AlterarNotasUseCase;
+import com.joaoeffs.portalalunojava.core.domain.notas.usecase.AlterarNotasUseCase.AlterarNotas;
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarAlunoDisciplinaUseCaseTest {
+public class AlterarNotasUseCaseTest {
 
-    private final String URL = "/api/alunodisciplina";
+    @Autowired
+    private NotasDomainRepository repository;
 
     @Autowired
     private DisciplinaDomainRepository disciplinaRepository;
@@ -40,20 +45,24 @@ public class RegistrarAlunoDisciplinaUseCaseTest {
     private AlunoDomainRepository alunoRepository;
 
     @Autowired
-    private AlunoDisciplinaDomainRepository repository;
+    private AlunoDisciplinaDomainRepository alunoDisciplinaRepository;
 
     @Autowired
-    private MockMvc mock;
+    MockMvc mock;
 
     @Autowired
     ObjectMapper mapper;
+
+    private Notas notas;
 
     private Disciplina disciplina;
 
     private Aluno aluno;
 
+    private AlunoDisciplina alunoDisciplina;
+
     @BeforeEach
-    public void before() {
+    public void setup() {
 
         disciplina = Disciplina.builder()
             .nome("Ciência de Dados")
@@ -73,25 +82,39 @@ public class RegistrarAlunoDisciplinaUseCaseTest {
 
         alunoRepository.save(aluno);
 
+        alunoDisciplina = AlunoDisciplina.builder()
+            .aluno(aluno.getId())
+            .disciplina(disciplina.getId())
+            .build();
+
+        alunoDisciplinaRepository.save(alunoDisciplina);
+
+        notas = Notas.builder()
+            .n1(BigDecimal.valueOf(10))
+            .n2(BigDecimal.ZERO)
+            .n3(BigDecimal.ZERO)
+            .alunoDisciplina(alunoDisciplina.getId())
+            .build();
+
+        repository.save(notas);
     }
 
     @Test
     public void caminhoFeliz() throws Exception {
 
-        UUID disciplinaId = disciplina.getId();
-        UUID alunoId = aluno.getId();
+        UUID id = notas.getId();
 
-        RegistrarAlunoDisciplina command = RegistrarAlunoDisciplina.builder()
-            .disciplina(disciplinaId)
-            .aluno(alunoId)
+        AlterarNotas command = AlterarNotas.builder()
+            .n2(BigDecimal.valueOf(7))
+            .n3(BigDecimal.valueOf(5))
             .build();
 
-        String alunoDisciplina = mapper.writeValueAsString(command);
+        String notas = mapper.writeValueAsString(command);
 
-        mock.perform(post(URL)
+        mock.perform(put("/api/notas/{id}", id)
             .contentType(MediaType.APPLICATION_JSON)
-            .content(alunoDisciplina))
-            .andExpect(status().isCreated())
+            .content(notas))
+            .andExpect(status().isOk())
             .andReturn();
     }
 }
