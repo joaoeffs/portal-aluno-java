@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.joaoeffs.portalalunojava.query.domain.disciplina.app.DisciplinaQueryAppService;
-import com.joaoeffs.portalalunojava.query.domain.disciplina.model.DisciplinaQuery;
 import com.joaoeffs.portalalunojava.query.domain.disciplina.projection.ListagemDisciplina;
 
 import io.swagger.v3.oas.annotations.tags.Tag;

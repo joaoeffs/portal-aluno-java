@@ -27,7 +27,7 @@ public class AlunoController {
     private final RegistrarAlunoUseCase registrarAlunoUseCase;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> registrarProfessor(@RequestBody RegistrarAluno command) {
+    public ResponseEntity<Void> registrarAluno(@RequestBody RegistrarAluno command) {
         UUID id = registrarAlunoUseCase.handle(command);
 
         return ResponseEntity.created(fromCurrentRequest().path("/").path(id.toString()).build().toUri()).build();

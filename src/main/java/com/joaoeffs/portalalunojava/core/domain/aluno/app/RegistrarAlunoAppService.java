@@ -28,6 +28,7 @@ public class RegistrarAlunoAppService implements RegistrarAlunoUseCase {
             .email(command.getEmail())
             .senha(command.getSenha())
             .matricula(command.getMatricula())
+            .role(command.getRole())
             .build();
 
         repository.save(aluno);

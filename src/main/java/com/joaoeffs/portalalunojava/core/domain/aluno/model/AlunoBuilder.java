@@ -3,6 +3,10 @@ package com.joaoeffs.portalalunojava.core.domain.aluno.model;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.joaoeffs.portalalunojava.infra.role.Role;
+
 public class AlunoBuilder {
 
     protected UUID id;
@@ -18,6 +22,8 @@ public class AlunoBuilder {
     protected String senha;
 
     protected String matricula;
+
+    protected Role role;
 
     public AlunoBuilder nome(String nome) {
         this.nome = nome;
@@ -40,12 +46,18 @@ public class AlunoBuilder {
     }
 
     public AlunoBuilder senha(String senha) {
-        this.senha = senha;
+        String encryptedPassword = new BCryptPasswordEncoder().encode(senha);
+        this.senha = encryptedPassword;
         return this;
     }
 
     public AlunoBuilder matricula(String matricula) {
         this.matricula = matricula;
+        return this;
+    }
+
+    public AlunoBuilder role(Role role) {
+        this.role = role;
         return this;
     }
 

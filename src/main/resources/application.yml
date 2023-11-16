@@ -48,3 +48,8 @@ springdoc:
     tagsSorter: alpha
     path: /swagger-ui.html
     title: Portal Aluno
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
