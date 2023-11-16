@@ -1,10 +1,18 @@
 package com.joaoeffs.portalalunojava.infra.role;
 
-public class Role {
+public enum Role {
 
-    public static class Value {
-        public static final String ADMINISTRADOR = "ADMINISTRADOR";
-        public static final String PROFESSOR = "PROFESSOR";
-        public static final String ALUNO = "ALUNO";
+    ADMIN("admin"),
+    PROFESSOR("professor"),
+    ALUNO("aluno");
+
+    private String role;
+
+    Role(String role) {
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
     }
 }

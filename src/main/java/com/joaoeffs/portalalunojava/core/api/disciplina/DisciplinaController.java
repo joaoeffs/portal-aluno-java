@@ -1,7 +1,5 @@
 package com.joaoeffs.portalalunojava.core.api.disciplina;
 
-import static com.joaoeffs.portalalunojava.infra.role.Role.Value.ADMINISTRADOR;
-import static com.joaoeffs.portalalunojava.infra.role.Role.Value.PROFESSOR;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
@@ -27,8 +25,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 import lombok.RequiredArgsConstructor;
 
-import jakarta.annotation.security.RolesAllowed;
-
 @RequiredArgsConstructor
 
 @RestController
@@ -40,7 +36,6 @@ public class DisciplinaController {
     private final AlterarDisciplinaUseCase alterarDisciplinaUseCase;
     private final RemoverDisciplinaUseCase removerDisciplinaUseCase;
 
-    @RolesAllowed({ ADMINISTRADOR, PROFESSOR })
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> registrarDisciplina(@RequestBody RegistrarDisciplina command) {
         var id = registrarDisciplinaService.handle(command);
