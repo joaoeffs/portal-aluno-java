@@ -29,7 +29,7 @@ public interface AlunoDisciplinaQueryRepository extends Repository<AlunoDiscipli
         	aluno_disciplina ad
         left join notas n on
         	ad.id = n.aluno_disciplina_id
-        left join aluno a on
+        left join usuario a on
          	ad.aluno_id = a.id
         where
         	ad.disciplina_id = :disciplinaId

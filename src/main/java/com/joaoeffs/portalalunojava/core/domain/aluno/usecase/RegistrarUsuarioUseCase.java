@@ -8,13 +8,13 @@ import com.joaoeffs.portalalunojava.infra.role.Role;
 import lombok.Builder;
 import lombok.Value;
 
-public interface RegistrarAlunoUseCase {
+public interface RegistrarUsuarioUseCase {
 
-    UUID handle(RegistrarAluno command);
+    UUID handle(RegistrarUsuario command);
 
     @Value
     @Builder
-    class RegistrarAluno {
+    class RegistrarUsuario {
 
         String nome;
 

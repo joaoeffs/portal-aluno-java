@@ -1,4 +1,4 @@
-package com.joaoeffs.portalalunojava.core.api.aluno;
+package com.joaoeffs.portalalunojava.core.api.usuario;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarAlunoUseCase;
-import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarAlunoUseCase.RegistrarAluno;
+import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUseCase;
+import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUseCase.RegistrarUsuario;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -20,15 +20,15 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/api/aluno", produces = APPLICATION_JSON_VALUE)
-@Tag(name = "aluno-controller")
-public class AlunoController {
+@RequestMapping(path = "/api/usuario", produces = APPLICATION_JSON_VALUE)
+@Tag(name = "usuario-controller")
+public class UsuarioController {
 
-    private final RegistrarAlunoUseCase registrarAlunoUseCase;
+    private final RegistrarUsuarioUseCase registrarUsuarioUseCase;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> registrarAluno(@RequestBody RegistrarAluno command) {
-        UUID id = registrarAlunoUseCase.handle(command);
+    public ResponseEntity<Void> registrar(@RequestBody RegistrarUsuario command) {
+        UUID id = registrarUsuarioUseCase.handle(command);
 
         return ResponseEntity.created(fromCurrentRequest().path("/").path(id.toString()).build().toUri()).build();
     }

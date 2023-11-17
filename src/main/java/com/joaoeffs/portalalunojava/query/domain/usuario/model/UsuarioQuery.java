@@ -1,8 +1,8 @@
-package com.joaoeffs.portalalunojava.query.domain.professor.model;
+package com.joaoeffs.portalalunojava.query.domain.usuario.model;
 
 import java.util.UUID;
 
-import org.hibernate.annotations.Immutable;
+import com.joaoeffs.portalalunojava.infra.role.Role;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -19,10 +21,9 @@ import jakarta.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Immutable
 @Entity
-@Table(name = "professor")
-public class ProfessorQuery {
+@Table(name = "usuario")
+public class UsuarioQuery {
 
     @Id
     @Column(name = "id")
@@ -33,4 +34,11 @@ public class ProfessorQuery {
 
     @Column(name = "sobrenome")
     private String sobrenome;
+
+    @Column(name = "matricula")
+    private String matricula;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
 }

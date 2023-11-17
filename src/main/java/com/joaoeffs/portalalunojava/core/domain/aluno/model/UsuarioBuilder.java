@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.joaoeffs.portalalunojava.infra.role.Role;
 
-public class AlunoBuilder {
+public class UsuarioBuilder {
 
     protected UUID id;
 
@@ -25,46 +25,46 @@ public class AlunoBuilder {
 
     protected Role role;
 
-    public AlunoBuilder nome(String nome) {
+    public UsuarioBuilder nome(String nome) {
         this.nome = nome;
         return this;
     }
 
-    public AlunoBuilder sobrenome(String sobrenome) {
+    public UsuarioBuilder sobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
         return this;
     }
 
-    public AlunoBuilder dataNascimento(LocalDate dataNascimento) {
+    public UsuarioBuilder dataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
         return this;
     }
 
-    public AlunoBuilder email(String email) {
+    public UsuarioBuilder email(String email) {
         this.email = email;
         return this;
     }
 
-    public AlunoBuilder senha(String senha) {
+    public UsuarioBuilder senha(String senha) {
         String encryptedPassword = new BCryptPasswordEncoder().encode(senha);
         this.senha = encryptedPassword;
         return this;
     }
 
-    public AlunoBuilder matricula(String matricula) {
+    public UsuarioBuilder matricula(String matricula) {
         this.matricula = matricula;
         return this;
     }
 
-    public AlunoBuilder role(Role role) {
+    public UsuarioBuilder role(Role role) {
         this.role = role;
         return this;
     }
 
-    public Aluno build() {
+    public Usuario build() {
 
         id = UUID.randomUUID();
 
-        return new Aluno(this);
+        return new Usuario(this);
     }
 }

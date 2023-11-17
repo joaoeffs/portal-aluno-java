@@ -20,6 +20,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisc
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisciplinaUseCase.RegistrarDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RemoverDisciplinaUseCase;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RemoverDisciplinaUseCase.RemoverDisciplina;
+import com.joaoeffs.portalalunojava.infra.security.CurrentUser;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -37,8 +38,8 @@ public class DisciplinaController {
     private final RemoverDisciplinaUseCase removerDisciplinaUseCase;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> registrarDisciplina(@RequestBody RegistrarDisciplina command) {
-        var id = registrarDisciplinaService.handle(command);
+    public ResponseEntity<Void> registrarDisciplina(@RequestBody RegistrarDisciplina command, @CurrentUser UUID usuario) {
+        var id = registrarDisciplinaService.handle(command.from(usuario));
 
         return ResponseEntity.created(fromCurrentRequest().path("/").path(id.toString()).build().toUri()).build();
     }

@@ -17,8 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
-import com.joaoeffs.portalalunojava.core.domain.aluno.repository.AlunoDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
+import com.joaoeffs.portalalunojava.core.domain.aluno.repository.UsuarioDomainRepository;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.model.AlunoDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.repository.AlunoDisciplinaDomainRepository;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.model.Disciplina;
@@ -37,7 +37,7 @@ public class RegistrarNotasUseCaseTest {
     private DisciplinaDomainRepository disciplinaRepository;
 
     @Autowired
-    private AlunoDomainRepository alunoRepository;
+    private UsuarioDomainRepository usuarioRepository;
 
     @Autowired
     private AlunoDisciplinaDomainRepository alunoDisciplinaRepository;
@@ -50,7 +50,7 @@ public class RegistrarNotasUseCaseTest {
 
     private Disciplina disciplina;
 
-    private Aluno aluno;
+    private Usuario usuario;
 
     private AlunoDisciplina alunoDisciplina;
 
@@ -64,7 +64,7 @@ public class RegistrarNotasUseCaseTest {
 
         disciplinaRepository.save(disciplina);
 
-        aluno = Aluno.builder()
+        usuario = Usuario.builder()
             .nome("João")
             .sobrenome("Effting")
             .dataNascimento(LocalDate.of(1999, 07, 16))
@@ -73,10 +73,10 @@ public class RegistrarNotasUseCaseTest {
             .senha("1234")
             .build();
 
-        alunoRepository.save(aluno);
+        usuarioRepository.save(usuario);
 
         alunoDisciplina = AlunoDisciplina.builder()
-            .aluno(aluno.getId())
+            .aluno(usuario.getId())
             .disciplina(disciplina.getId())
             .build();
 

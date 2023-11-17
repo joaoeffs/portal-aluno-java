@@ -20,8 +20,8 @@ public class DisciplinaQueryAppService {
 
     private final DisciplinaQueryRepository repository;
 
-    public List<ListagemDisciplina> listar() {
-        return repository.findAllProjectBy();
+    public List<DisciplinaQuery> listar(UUID usuario) {
+        return repository.findByProfessorId(usuario);
     }
 
     public Optional<ListagemDisciplina> findById(UUID id) {
