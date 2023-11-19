@@ -20,6 +20,8 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -28,8 +30,8 @@ import jakarta.persistence.Table;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "aluno")
-public class Aluno implements UserDetails {
+@Table(name = "usuario")
+public class Usuario implements UserDetails {
 
     @Id
     @AttributeOverride(name = "id", column = @Column(name = "id", columnDefinition = "uuid"))
@@ -53,14 +55,15 @@ public class Aluno implements UserDetails {
     @Column(name = "matricula")
     private String matricula;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
 
-    public static AlunoBuilder builder() {
-        return new AlunoBuilder();
+    public static UsuarioBuilder builder() {
+        return new UsuarioBuilder();
     }
 
-    Aluno(AlunoBuilder builder) {
+    Usuario(UsuarioBuilder builder) {
         this.id = requireNonNull(builder.id);
         this.nome = builder.nome;
         this.sobrenome = builder.sobrenome;

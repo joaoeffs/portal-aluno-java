@@ -9,15 +9,4 @@ public interface ListagemDisciplina {
     String getNome();
 
     String getCodigo();
-
-    Professor getProfessor();
-
-    interface Professor {
-
-        UUID getId();
-
-        String getNome();
-
-        String getSobrenome();
-    }
 }

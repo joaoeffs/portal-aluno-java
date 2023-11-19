@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
+import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
 import com.joaoeffs.portalalunojava.core.domain.aluno.model.AuthenticationDTO;
 import com.joaoeffs.portalalunojava.core.domain.aluno.model.LoginResponseDTO;
 import com.joaoeffs.portalalunojava.infra.security.TokenService;
@@ -19,8 +19,6 @@ import com.joaoeffs.portalalunojava.infra.security.TokenService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import lombok.AllArgsConstructor;
-
-import jakarta.validation.Valid;
 
 @AllArgsConstructor
 @RestController
@@ -39,7 +37,7 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.senha());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token = tokenService.generateToken((Aluno) auth.getPrincipal());
+        var token = tokenService.generateToken((Usuario) auth.getPrincipal());
 
         return ResponseEntity.ok(new LoginResponseDTO(token));
     }

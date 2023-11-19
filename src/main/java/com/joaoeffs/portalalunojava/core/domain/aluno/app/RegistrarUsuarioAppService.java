@@ -5,23 +5,23 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
-import com.joaoeffs.portalalunojava.core.domain.aluno.repository.AlunoDomainRepository;
-import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarAlunoUseCase;
+import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
+import com.joaoeffs.portalalunojava.core.domain.aluno.repository.UsuarioDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUseCase;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
 @Transactional
-public class RegistrarAlunoAppService implements RegistrarAlunoUseCase {
+public class RegistrarUsuarioAppService implements RegistrarUsuarioUseCase {
 
-    private final AlunoDomainRepository repository;
+    private final UsuarioDomainRepository repository;
 
     @Override
-    public UUID handle(RegistrarAluno command) {
+    public UUID handle(RegistrarUsuario command) {
 
-        Aluno aluno = Aluno.builder()
+        var usuario = Usuario.builder()
             .nome(command.getNome())
             .sobrenome(command.getSobrenome())
             .dataNascimento(command.getDataNascimento())
@@ -31,8 +31,8 @@ public class RegistrarAlunoAppService implements RegistrarAlunoUseCase {
             .role(command.getRole())
             .build();
 
-        repository.save(aluno);
+        repository.save(usuario);
 
-        return aluno.getId();
+        return usuario.getId();
     }
 }

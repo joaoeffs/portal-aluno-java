@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.time.LocalDate;
 import java.util.UUID;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
-import com.joaoeffs.portalalunojava.core.domain.aluno.repository.AlunoDomainRepository;
+import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
+import com.joaoeffs.portalalunojava.core.domain.aluno.repository.UsuarioDomainRepository;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.model.AlunoDisciplina;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.repository.AlunoDisciplinaDomainRepository;
 import com.joaoeffs.portalalunojava.core.domain.disciplina.model.Disciplina;
@@ -29,7 +28,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.repository.Disciplina
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RemoverAlunoDisciplinaUseCaseTest {
+public class RemoverUsuarioDisciplinaUseCaseTest {
 
     @Autowired
     private AlunoDisciplinaDomainRepository repository;
@@ -38,7 +37,7 @@ public class RemoverAlunoDisciplinaUseCaseTest {
     private DisciplinaDomainRepository disciplinaRepository;
 
     @Autowired
-    private AlunoDomainRepository alunoRepository;
+    private UsuarioDomainRepository usuarioRepository;
 
     @Autowired
     MockMvc mock;
@@ -50,7 +49,7 @@ public class RemoverAlunoDisciplinaUseCaseTest {
 
     private Disciplina disciplina;
 
-    private Aluno aluno;
+    private Usuario usuario;
 
     @BeforeEach
     public void before() {
@@ -62,7 +61,7 @@ public class RemoverAlunoDisciplinaUseCaseTest {
 
         disciplinaRepository.save(disciplina);
 
-        aluno = Aluno.builder()
+        usuario = Usuario.builder()
             .nome("João")
             .sobrenome("Effting")
             .dataNascimento(LocalDate.of(1999, 07, 16))
@@ -71,10 +70,10 @@ public class RemoverAlunoDisciplinaUseCaseTest {
             .senha("1234")
             .build();
 
-        alunoRepository.save(aluno);
+        usuarioRepository.save(usuario);
 
         UUID disciplinaId = disciplina.getId();
-        UUID alunoId = aluno.getId();
+        UUID alunoId = usuario.getId();
 
         alunoDisciplina = AlunoDisciplina.builder()
             .disciplina(disciplinaId)

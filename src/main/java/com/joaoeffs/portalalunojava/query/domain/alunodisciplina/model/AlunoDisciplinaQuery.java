@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.Immutable;
 
-import com.joaoeffs.portalalunojava.query.domain.aluno.model.AlunoQuery;
+import com.joaoeffs.portalalunojava.query.domain.usuario.model.UsuarioQuery;
 import com.joaoeffs.portalalunojava.query.domain.disciplina.model.DisciplinaQuery;
 
 import lombok.AllArgsConstructor;
@@ -35,7 +35,7 @@ public class AlunoDisciplinaQuery {
 
     @ManyToOne
     @JoinColumn(name = "aluno_id")
-    private AlunoQuery aluno;
+    private UsuarioQuery aluno;
 
     @ManyToOne
     @JoinColumn(name = "disciplina_id")

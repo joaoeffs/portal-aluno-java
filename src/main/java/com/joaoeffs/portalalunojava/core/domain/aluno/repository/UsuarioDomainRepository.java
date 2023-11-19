@@ -5,11 +5,11 @@ import java.util.UUID;
 import org.springframework.data.repository.Repository;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.joaoeffs.portalalunojava.core.domain.aluno.model.Aluno;
+import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
 
-public interface AlunoDomainRepository extends Repository<Aluno, UUID> {
+public interface UsuarioDomainRepository extends Repository<Usuario, UUID> {
 
-    void save(Aluno aluno);
+    void save(Usuario usuario);
 
     UserDetails findByEmail(String email);
 

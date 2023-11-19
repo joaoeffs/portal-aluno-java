@@ -1,4 +1,4 @@
-package com.joaoeffs.portalalunojava.query.domain.aluno.projection;
+package com.joaoeffs.portalalunojava.query.domain.usuario.projection;
 
 import java.util.UUID;
 
@@ -9,4 +9,6 @@ public interface ListagemAluno {
     String getNome();
 
     String getSobrenome();
+
+    String getRole();
 }

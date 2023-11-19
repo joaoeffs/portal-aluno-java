@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.joaoeffs.portalalunojava.infra.security.CurrentUser;
 import com.joaoeffs.portalalunojava.query.domain.disciplina.app.DisciplinaQueryAppService;
+import com.joaoeffs.portalalunojava.query.domain.disciplina.model.DisciplinaQuery;
 import com.joaoeffs.portalalunojava.query.domain.disciplina.projection.ListagemDisciplina;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -28,8 +30,8 @@ public class DisciplinaQueryController {
     private final DisciplinaQueryAppService disciplinaQueryAppService;
 
     @GetMapping
-    public List<ListagemDisciplina> listar() {
-        return disciplinaQueryAppService.listar();
+    public List<DisciplinaQuery> listar(@CurrentUser UUID usuario) {
+        return disciplinaQueryAppService.listar(usuario);
     }
 
     @GetMapping("/{id}")

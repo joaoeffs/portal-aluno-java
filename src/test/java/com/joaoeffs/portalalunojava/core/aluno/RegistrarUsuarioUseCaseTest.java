@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.time.LocalDate;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +16,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.joaoeffs.portalalunojava.core.domain.aluno.repository.AlunoDomainRepository;
-import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarAlunoUseCase.RegistrarAluno;
+import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUseCase.RegistrarUsuario;
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarAlunoUseCaseTest {
+public class RegistrarUsuarioUseCaseTest {
 
     private final String URL = "/api/aluno";
 
@@ -34,12 +32,12 @@ public class RegistrarAlunoUseCaseTest {
     @Autowired
     ObjectMapper mapper;
 
-    RegistrarAluno command;
+    RegistrarUsuario command;
 
     @BeforeEach
     void before() {
 
-        command = RegistrarAluno.builder()
+        command = RegistrarUsuario.builder()
             .nome("João")
             .sobrenome("Effting")
             .dataNascimento(LocalDate.of(1999, 07, 16))
