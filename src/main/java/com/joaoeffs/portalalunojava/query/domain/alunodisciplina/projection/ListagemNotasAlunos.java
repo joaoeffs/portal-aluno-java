@@ -23,4 +23,8 @@ public interface ListagemNotasAlunos {
 
     String getMatricula();
 
+    String getNomeDisciplina();
+
+    String getCodigoDisciplina();
+
 }

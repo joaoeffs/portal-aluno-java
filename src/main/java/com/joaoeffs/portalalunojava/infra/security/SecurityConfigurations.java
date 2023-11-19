@@ -39,6 +39,7 @@ public class SecurityConfigurations {
                 .requestMatchers(HttpMethod.DELETE, "/api/disciplina").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.DELETE, "/api/alunodisciplina").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.GET, "/api/alunodisciplina").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/alunodisciplina/{id}/aluno").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
