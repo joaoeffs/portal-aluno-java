@@ -1,5 +1,6 @@
 package com.joaoeffs.portalalunojava.core.domain.aluno.repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.repository.Repository;
@@ -12,5 +13,7 @@ public interface UsuarioDomainRepository extends Repository<Usuario, UUID> {
     void save(Usuario usuario);
 
     UserDetails findByEmail(String email);
+
+    Optional<Usuario> findUsuarioByEmail(String email);
 
 }
