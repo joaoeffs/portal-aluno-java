@@ -28,6 +28,8 @@ public class AlterarNotasAppService implements AlterarNotasUseCase {
             .n3(command.getN3())
             .apply();
 
+        notas.calcularMedia();
+
         repository.save(notas);
 
         return notas.getId();

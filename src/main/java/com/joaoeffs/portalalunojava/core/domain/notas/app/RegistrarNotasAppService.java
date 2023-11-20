@@ -28,6 +28,8 @@ public class RegistrarNotasAppService implements RegistrarNotasUseCase {
             .alunoDisciplina(command.getAlunoDisciplina())
             .build();
 
+        notas.calcularMedia();
+
         repository.save(notas);
 
         return notas.getId();

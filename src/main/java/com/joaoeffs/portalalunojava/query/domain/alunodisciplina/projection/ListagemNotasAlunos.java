@@ -15,6 +15,10 @@ public interface ListagemNotasAlunos {
 
     BigDecimal getN3();
 
+    BigDecimal getMedia();
+
+    String getSituacao();
+
     UUID getAlunoId();
 
     String getNome();

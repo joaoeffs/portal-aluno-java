@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping(path = "api/notas", produces = APPLICATION_JSON_VALUE)
-@Tag(name = "noras-controller")
+@Tag(name = "notas-controller")
 public class NotasController {
 
     private final RegistrarNotasUseCase registrarNotasUseCase;
