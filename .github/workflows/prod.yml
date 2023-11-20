@@ -18,3 +18,12 @@ jobs:
 
       - name: Build project
         run: mvn clean install
+
+      - name: Login docker
+        run: docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
+
+      - name: Builder docker image
+        run: docker build -t joaoeffs/portal-aluno-java .
+
+      - name: Push image docker
+        run: docker push joaoeffs/portal-aluno-java
