@@ -25,6 +25,8 @@ public interface AlunoDisciplinaQueryRepository extends Repository<AlunoDiscipli
         	n.n1 as N1,
         	n.n2 as N2,
         	n.n3 as N3,
+        	n.media as media,
+        	n.situacao as situacao,
         	cast(a.id AS varchar) AS alunoId,
         	a.nome as nome,
          	a.sobrenome as sobrenome,
