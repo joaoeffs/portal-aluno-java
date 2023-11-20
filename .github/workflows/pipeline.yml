@@ -10,6 +10,17 @@ jobs:
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:12
+        env: 
+          POSTGRES_DB: it
+          POSTGRES_USER: joaoeffs
+          POSTGRES_PASSWORD: root
+        ports:
+          - 5432:5432
+    
     steps:
       - uses: actions/checkout@v3
         with:
