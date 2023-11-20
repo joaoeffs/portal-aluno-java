@@ -1,71 +1,44 @@
 name: SonarCloud
+
 on:
   push:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
-    
+    branches:
+      - main
+
 jobs:
-  build:
-    name: Build and analyze
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:12
-        env: 
-          POSTGRES_DB: it
-          POSTGRES_USER: joaoeffs
-          POSTGRES_PASSWORD: root
-        ports:
-          - 5432:5432
-    
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 
-      
-      - name: Set up JDK 17
+          fetch-depth: 0 # Necessário para o SonarCloud calcular a cobertura corretamente
+
+      - name: Set up JDK 11 # Ou a versão que você usa
         uses: actions/setup-java@v3
         with:
-          java-version: 17
-          distribution: 'zulu'
+          java-version: 11
+          distribution: 'temurin'
 
-      - name: Set Spring profile
-        run: echo "SPRING_PROFILES_ACTIVE=dev" >> $GITHUB_ENV
-
-      - name: Docker Login
-        uses: docker/login-action@v3.0.0
-        with: 
-          username: ${{ secrets.USER }}
-          password: ${{ secrets.PASSWORD }}
-
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v5.0.0
-        with:
-          context: .
-          push: true
-          tags: |
-            joaoeffs/portalaluno:v1
-            joaoeffs/portalaluno:it
-      
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=joaoeffs_portal-aluno-java
+
+      - name: Build and test with Maven
+        run: mvn clean verify --file pom.xml
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=joaoeffs_portal-aluno-java
+            -Dsonar.organization=joaoeffs
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
