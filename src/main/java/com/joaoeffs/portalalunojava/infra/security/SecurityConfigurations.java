@@ -36,6 +36,7 @@ public class SecurityConfigurations {
                 .requestMatchers(HttpMethod.POST, "/api/notas").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.PUT, "/api/notas").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.GET, "/api/notas").hasRole("PROFESSOR")
+                .requestMatchers(HttpMethod.GET, "/api/notas/aluno/{alunoId}").permitAll()
                 .requestMatchers(HttpMethod.DELETE, "/api/disciplina").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.DELETE, "/api/alunodisciplina").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.GET, "/api/alunodisciplina").permitAll()
