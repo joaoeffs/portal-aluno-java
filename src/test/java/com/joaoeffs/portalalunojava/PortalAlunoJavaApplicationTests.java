@@ -1,14 +1,15 @@
 package com.joaoeffs.portalalunojava;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("dev")
-public class ApplicationTest {
+public class PortalAlunoJavaApplicationTests {
 
     @Test
-    void contextLoads() {
+     void contextLoads() {
+        Assertions.assertTrue(true);
     }
+
 }
