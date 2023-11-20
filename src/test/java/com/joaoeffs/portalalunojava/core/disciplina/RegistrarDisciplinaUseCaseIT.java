@@ -20,7 +20,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisc
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarDisciplinaUseCaseTest {
+public class RegistrarDisciplinaUseCaseIT {
 
     private final String URL = "/api/disciplina";
 

@@ -24,7 +24,7 @@ import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUs
 @Rollback
 public class RegistrarUsuarioUseCaseTest {
 
-    private final String URL = "/api/aluno";
+    private final String URL = "/api/usuario";
 
     @Autowired
     private MockMvc mock;
