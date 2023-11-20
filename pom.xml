@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.joaoeffs</groupId>
 	<artifactId>portal-aluno-java</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>portal-aluno-java</name>
 	<description>TCC - Portal Aluno</description>
 	<properties>
