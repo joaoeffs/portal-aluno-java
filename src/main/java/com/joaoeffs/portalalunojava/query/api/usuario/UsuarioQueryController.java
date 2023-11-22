@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joaoeffs.portalalunojava.query.domain.usuario.app.UsuarioQueryAppService;
+import com.joaoeffs.portalalunojava.infra.role.Role;
 import com.joaoeffs.portalalunojava.query.domain.usuario.model.UsuarioQuery;
-import com.joaoeffs.portalalunojava.query.domain.usuario.projection.ListagemAluno;
+import com.joaoeffs.portalalunojava.query.domain.usuario.repository.UsuarioQueryRepository;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -22,11 +22,10 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(path = "api/usuario", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "usuario-query-controller")
 public class UsuarioQueryController {
-
-    private final UsuarioQueryAppService usuarioQueryAppService;
+    private final UsuarioQueryRepository repository;
 
     @GetMapping
     public List<UsuarioQuery> listar() {
-        return usuarioQueryAppService.listar();
+        return repository.findByRole(Role.valueOf(Role.ALUNO.toString()));
     }
 }

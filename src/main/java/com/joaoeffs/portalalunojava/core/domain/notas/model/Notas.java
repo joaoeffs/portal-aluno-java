@@ -1,8 +1,5 @@
 package com.joaoeffs.portalalunojava.core.domain.notas.model;
 
-import static lombok.AccessLevel.PRIVATE;
-import static lombok.AccessLevel.PROTECTED;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.UUID;
@@ -19,8 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Getter
-@NoArgsConstructor(access = PROTECTED, force = true)
-@AllArgsConstructor(access = PRIVATE)
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity(name = "Notas")
 @Table(name = "notas")
