@@ -101,5 +101,35 @@ public class NotasTest {
         assertEquals(Situacao.REPROVADO, notas.getSituacao(), "A situação deve ser REPROVADO quando a média é menor que 6.");
     }
 
+    @Test
+    void situacaoAprovadoQuandoMediaExatamenteSeis() {
+        BigDecimal n1 = BigDecimal.valueOf(5);
+        BigDecimal n2 = BigDecimal.valueOf(6);
+        BigDecimal n3 = BigDecimal.valueOf(7);
+        Notas notas = new Notas(id, n1, n2, n3, null, null, alunoDisciplina);
+        notas.calcularMedia();
+        assertEquals(Situacao.APROVADO, notas.getSituacao(), "A situação deve ser APROVADO quando a média é exatamente 6.");
+    }
+
+
+    @Test
+    void situacaoEmAndamentoQuandoUmaNotaNaoRegistrada() {
+        Notas notasComN1Nulo = new Notas(id, null, n2, n3, media, null, alunoDisciplina);
+        notasComN1Nulo.calcularMedia();
+        assertEquals(Situacao.EM_ANDAMENTO, notasComN1Nulo.getSituacao(),
+            "A situação deve ser EM_ANDAMENTO quando a nota n1 não está registrada.");
+
+        Notas notasComN2Nulo = new Notas(id, n1, null, n3, media, null, alunoDisciplina);
+        notasComN2Nulo.calcularMedia();
+        assertEquals(Situacao.EM_ANDAMENTO, notasComN2Nulo.getSituacao(),
+            "A situação deve ser EM_ANDAMENTO quando a nota n2 não está registrada.");
+
+        Notas notasComN3Nulo = new Notas(id, n1, n2, null, media, null, alunoDisciplina);
+        notasComN3Nulo.calcularMedia();
+        assertEquals(Situacao.EM_ANDAMENTO, notasComN3Nulo.getSituacao(),
+            "A situação deve ser EM_ANDAMENTO quando a nota n3 não está registrada.");
+    }
+
+
 
 }

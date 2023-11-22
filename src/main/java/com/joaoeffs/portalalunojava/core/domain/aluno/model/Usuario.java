@@ -16,6 +16,7 @@ import com.joaoeffs.portalalunojava.infra.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
@@ -25,6 +26,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
