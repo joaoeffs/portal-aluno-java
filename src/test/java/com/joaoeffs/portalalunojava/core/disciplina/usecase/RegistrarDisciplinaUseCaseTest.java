@@ -31,7 +31,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.RegistrarDisc
 @AutoConfigureMockMvc
 @Transactional
 @Rollback
-public class RegistrarDisciplinaUseCaseTest {
+class RegistrarDisciplinaUseCaseTest {
 
     @Autowired
     MockMvc mockMvc;

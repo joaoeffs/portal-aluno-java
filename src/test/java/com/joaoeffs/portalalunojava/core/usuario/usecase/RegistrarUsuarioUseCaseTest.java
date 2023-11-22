@@ -22,7 +22,7 @@ import com.joaoeffs.portalalunojava.core.domain.aluno.usecase.RegistrarUsuarioUs
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarUsuarioUseCaseTest {
+class RegistrarUsuarioUseCaseTest {
 
     private final String URL = "/api/usuario";
 

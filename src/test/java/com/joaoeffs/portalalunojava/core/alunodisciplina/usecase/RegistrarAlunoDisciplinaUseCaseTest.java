@@ -28,7 +28,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.repository.Disciplina
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarAlunoDisciplinaUseCaseTest {
+class RegistrarAlunoDisciplinaUseCaseTest {
 
     private final String URL = "/api/alunodisciplina";
 
@@ -75,7 +75,7 @@ public class RegistrarAlunoDisciplinaUseCaseTest {
     }
 
     @Test
-    public void caminhoFeliz() throws Exception {
+    void caminhoFeliz() throws Exception {
 
         UUID disciplinaId = disciplina.getId();
         UUID alunoId = usuario.getId();

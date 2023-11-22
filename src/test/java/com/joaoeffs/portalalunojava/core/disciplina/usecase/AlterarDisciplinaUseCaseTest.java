@@ -24,7 +24,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.usecase.AlterarDiscip
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class AlterarDisciplinaUseCaseTest {
+class AlterarDisciplinaUseCaseTest {
 
     @Autowired
     private DisciplinaDomainRepository repository;
@@ -48,7 +48,7 @@ public class AlterarDisciplinaUseCaseTest {
     }
 
     @Test
-    public void caminhoFeliz() throws Exception {
+    void caminhoFeliz() throws Exception {
 
         UUID id = disciplina.getId();
 

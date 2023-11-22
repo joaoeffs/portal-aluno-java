@@ -23,7 +23,7 @@ import com.joaoeffs.portalalunojava.core.domain.disciplina.repository.Disciplina
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RemoverDisciplinaUseCaseTest {
+class RemoverDisciplinaUseCaseTest {
 
     @Autowired
     private DisciplinaDomainRepository repository;
@@ -44,7 +44,7 @@ public class RemoverDisciplinaUseCaseTest {
     }
 
     @Test
-    public void caminhoFeliz() throws Exception {
+    void caminhoFeliz() throws Exception {
 
         UUID id = disciplina.getId();
 

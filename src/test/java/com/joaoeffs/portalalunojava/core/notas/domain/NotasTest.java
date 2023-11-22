@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import com.joaoeffs.portalalunojava.core.domain.notas.model.Notas;
 import com.joaoeffs.portalalunojava.core.domain.notas.model.Situacao;
 
-public class NotasTest {
+class NotasTest {
 
     private Notas notas;
 
@@ -70,7 +70,7 @@ public class NotasTest {
 
         BigDecimal mediaEsperada = n1.add(n2).add(n3).divide(BigDecimal.valueOf(3), RoundingMode.HALF_UP);
 
-        assertTrue(mediaEsperada.compareTo(mediaCalculada) == 0, "A média calculada não está correta.");
+        assertEquals(0, mediaEsperada.compareTo(mediaCalculada), "A média calculada não está correta.");
     }
 
 
@@ -129,7 +129,5 @@ public class NotasTest {
         assertEquals(Situacao.EM_ANDAMENTO, notasComN3Nulo.getSituacao(),
             "A situação deve ser EM_ANDAMENTO quando a nota n3 não está registrada.");
     }
-
-
 
 }

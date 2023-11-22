@@ -32,7 +32,7 @@ import com.joaoeffs.portalalunojava.core.domain.notas.usecase.AlterarNotasUseCas
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class AlterarNotasUseCaseTest {
+class AlterarNotasUseCaseTest {
 
     @Autowired
     private NotasDomainRepository repository;
@@ -99,7 +99,7 @@ public class AlterarNotasUseCaseTest {
     }
 
     @Test
-    public void caminhoFeliz() throws Exception {
+    void caminhoFeliz() throws Exception {
 
         UUID id = notas.getId();
 

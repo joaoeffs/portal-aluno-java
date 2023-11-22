@@ -29,7 +29,7 @@ import com.joaoeffs.portalalunojava.core.domain.notas.usecase.RegistrarNotasUseC
 @AutoConfigureMockMvc(addFilters = false)
 @Transactional
 @Rollback
-public class RegistrarNotasUseCaseTest {
+class RegistrarNotasUseCaseTest {
 
     private final String URL = "/api/notas";
 
@@ -84,7 +84,7 @@ public class RegistrarNotasUseCaseTest {
     }
 
     @Test
-    public void caminhoFeliz() throws Exception {
+    void caminhoFeliz() throws Exception {
 
         RegistrarNotas command = RegistrarNotas.builder()
             .n1(BigDecimal.valueOf(10))

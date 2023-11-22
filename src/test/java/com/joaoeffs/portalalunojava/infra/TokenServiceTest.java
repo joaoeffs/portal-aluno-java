@@ -16,13 +16,13 @@ import com.joaoeffs.portalalunojava.core.domain.aluno.model.Usuario;
 import com.joaoeffs.portalalunojava.infra.security.TokenService;
 
 @SpringBootTest
-public class TokenServiceTest {
+class TokenServiceTest {
 
     @Autowired
     TokenService tokenService;
 
     @Test
-    public void geraToken() {
+    void geraToken() {
         Usuario user = new Usuario();
         user.setEmail("test@example.com");
 
@@ -33,7 +33,7 @@ public class TokenServiceTest {
     }
 
     @Test
-    public void validaToken() {
+    void validaToken() {
         Usuario user = new Usuario();
         user.setEmail("test@example.com");
 
@@ -44,7 +44,7 @@ public class TokenServiceTest {
     }
 
     @Test
-    public void deveValidaToken() {
+    void deveValidaToken() {
         String invalidToken = "abc123";
 
         String result = tokenService.validateToken(invalidToken);
