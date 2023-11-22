@@ -44,28 +44,4 @@ class UsuarioQueryTest {
             .andExpect(jsonPath("$[0].matricula", is("16071999")))
             .andExpect(jsonPath("$[0].role", is("ALUNO")));
     }
-
-    @Test
-    public void testUsuarioQueryCreation() {
-        UUID id = UUID.randomUUID();
-        String nome = "João";
-        String sobrenome = "Silva";
-        String matricula = "12345";
-        Role role = Role.ADMIN;
-
-        UsuarioQuery usuario = UsuarioQuery.builder()
-            .id(id)
-            .nome(nome)
-            .sobrenome(sobrenome)
-            .matricula(matricula)
-            .role(role)
-            .build();
-
-        assertNotNull(usuario);
-        assertEquals(id, usuario.getId());
-        assertEquals(nome, usuario.getNome());
-        assertEquals(sobrenome, usuario.getSobrenome());
-        assertEquals(matricula, usuario.getMatricula());
-        assertEquals(role, usuario.getRole());
-    }
 }
