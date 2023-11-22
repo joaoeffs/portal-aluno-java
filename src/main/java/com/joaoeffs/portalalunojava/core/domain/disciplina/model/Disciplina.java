@@ -1,8 +1,6 @@
 package com.joaoeffs.portalalunojava.core.domain.disciplina.model;
 
 import static java.util.Objects.requireNonNull;
-import static lombok.AccessLevel.PRIVATE;
-import static lombok.AccessLevel.PROTECTED;
 
 import java.util.UUID;
 
@@ -16,8 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Getter
-@NoArgsConstructor(access = PROTECTED, force = true)
-@AllArgsConstructor(access = PRIVATE)
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity(name = "Disciplina")
 @Table(name = "disciplina")

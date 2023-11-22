@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.app.AlunoDisciplinaQueryAppService;
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.model.AlunoDisciplinaQuery;
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.projection.ListagemAlunoDisciplina;
 import com.joaoeffs.portalalunojava.query.domain.alunodisciplina.projection.ListagemNotasAlunos;
@@ -27,14 +26,12 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(path = "api/alunodisciplina", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "aluno-disciplina-query-controller")
 public class AlunoDisciplinaQueryController {
-
-    private final AlunoDisciplinaQueryAppService alunoDisciplinaQueryAppService;
     private final AlunoDisciplinaQueryRepository repository;
 
 
     @GetMapping("/{disciplinaId}")
     public List<AlunoDisciplinaQuery> listarByDisciplina(@PathVariable UUID disciplinaId) {
-        return alunoDisciplinaQueryAppService.findByDisciplina(disciplinaId);
+        return repository.findByDisciplina(disciplinaId);
     }
 
     @GetMapping("/{disciplinaId}/listar-notas")
