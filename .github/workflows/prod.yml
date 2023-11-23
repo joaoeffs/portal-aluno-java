@@ -23,9 +23,9 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.projectKey=joaoeffs_portal-aluno-java  
-            -Dsonar.organization=joaoeffs  
-            -Dsonar.host.url=https://sonarcloud.io 
+            -Dsonar.projectKey=joaoeffs_portal-aluno-java \
+            -Dsonar.organization=joaoeffs \
+            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
