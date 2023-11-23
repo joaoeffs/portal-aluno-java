@@ -20,6 +20,7 @@ jobs:
         run: mvn clean install
 
       - name: Build and analyze
+        uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
             -Dsonar.projectKey=joaoeffs_portal-aluno-java  
