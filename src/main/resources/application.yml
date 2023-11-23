@@ -1,9 +1,4 @@
 spring:
-  application:
-    name: portal-aluno
-    profiles:
-      active:
-        - dev
   datasource:
     url: jdbc:postgresql://portal-aluno.czykd9frqmhb.sa-east-1.rds.amazonaws.com:5432/portal_aluno
     username: postgres
