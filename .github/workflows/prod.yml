@@ -19,24 +19,24 @@ jobs:
       - name: Build project
         run: mvn clean install -DskipTests
 
-      - name: Login docker
+      - name: Login docker hub
         run: docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
 
       - name: Builder docker image
-        run: docker build -t joaoeffs/portal-aluno-java .
+        run: docker build -t joaoeffs/portal-aluno .
 
       - name: Push image docker
-        run: docker push joaoeffs/portal-aluno-java
+        run: docker push joaoeffs/portal-aluno
 
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
-        run: docker pull joaoeffs/portal-aluno-java:latest
+        run: docker pull joaoeffs/portal-aluno:latest
 
       - name: Remover docker container
         run: docker rm -f portal-aluno
 
       - name: Run docker container
-        run: docker run -d -p 8080:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name portal-aluno joaoeffs/portal-aluno-java
+        run: docker run -d -p 8080:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name portal-aluno-container joaoeffs/portal-aluno
