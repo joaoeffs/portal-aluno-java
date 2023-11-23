@@ -6,6 +6,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,7 +24,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping(path = "api/notas", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "notas-controller")

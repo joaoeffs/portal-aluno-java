@@ -6,6 +6,7 @@ import static org.springframework.web.servlet.support.ServletUriComponentsBuilde
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
+@CrossOrigin("*")
 @RequestMapping(path = "/api/alunodisciplina", produces = APPLICATION_JSON_VALUE)
 @Tag(name = "aluno-disciplina-controller")
 public class AlunoDisciplinaController {
