@@ -36,7 +36,12 @@ jobs:
         run: docker pull joaoeffs/portal-aluno:latest
 
       - name: Remover docker container
-        run: docker rm -f portal-aluno
+        run: docker rm -f portal-aluno-java-container
 
       - name: Run docker container
-        run: docker run -d -p 8080:8080 -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_URL=${{secrets.DATABASE_URL}} --name portal-aluno-container joaoeffs/portal-aluno
+        run: |
+            docker run -d -p 8080:8080 \
+                -e DATABASE_USERNAME="${{ secrets.DATABASE_USERNAME }}" \
+                -e DATABASE_PASSWORD="${{ secrets.DATABASE_PASSWORD }}" \
+                -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+                --name portal-aluno-container joaoeffs/portal-aluno
