@@ -17,7 +17,18 @@ jobs:
           distribution: 'temurin'
 
       - name: Build project
-        run: mvn clean install -DskipTests
+        run: mvn clean install
+
+      - name: Build and analyze
+        with:
+          args: >
+            -Dsonar.projectKey=joaoeffs_portal-aluno-java  
+            -Dsonar.organization=joaoeffs  
+            -Dsonar.host.url=https://sonarcloud.io 
+            -Dsonar.login=d0c4bb32c5bb588186c9071d3bcfadfbe80275b 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Login docker hub
         run: docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
