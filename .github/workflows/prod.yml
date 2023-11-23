@@ -36,7 +36,7 @@ jobs:
         run: docker pull joaoeffs/portal-aluno:latest
 
       - name: Remover docker container
-        run: docker rm -f portal-aluno-java-container
+        run: docker rm -f portal-aluno-container
 
       - name: Run docker container
         run: |
