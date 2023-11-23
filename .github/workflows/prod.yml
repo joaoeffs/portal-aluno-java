@@ -19,16 +19,22 @@ jobs:
       - name: Build project
         run: mvn clean install
 
-      - name: Build and analyze
-        uses: sonarsource/sonarcloud-github-action@master
+      - name: Cache Maven packages
+        uses: actions/cache@v2
         with:
-          args: >
-            -Dsonar.projectKey=joaoeffs_portal-aluno-java \
-            -Dsonar.organization=joaoeffs \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+  
+      - name: Build and test with Maven
+        run: mvn clean verify --file pom.xml
+  
+      - name: SonarCloud Scan
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn sonar:sonar -Dsonar.projectKey=joaoeffs_portal-aluno-java -Dsonar.organization=joaoeffs -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
 
       - name: Login docker hub
         run: docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
