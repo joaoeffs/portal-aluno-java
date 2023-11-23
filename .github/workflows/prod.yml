@@ -26,11 +26,9 @@ jobs:
             -Dsonar.projectKey=joaoeffs_portal-aluno-java  
             -Dsonar.organization=joaoeffs  
             -Dsonar.host.url=https://sonarcloud.io 
-            -Dsonar.login=d0c4bb32c5bb588186c9071d3bcfadfbe80275b 
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=joaoeffs_portal-aluno-java
 
       - name: Login docker hub
         run: docker login -u ${{ secrets.USER }} -p ${{ secrets.PASSWORD }}
