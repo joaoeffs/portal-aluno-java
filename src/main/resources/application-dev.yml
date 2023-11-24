@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: portal-aluno
+    profiles:
+      active:
+        - dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/portal-aluno?currentSchema=public
+    username: postgres
+    password: totvs@123
+    hikari:
+      minimum-idle: 0
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      max-lifetime: 60000
+      connection-timeout: 30000
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    flyway:
+      schemas:
+        - public
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+springdoc:
+  default-produces-media-type: application/json
+  swagger-ui:
+    display-request-duration: true
+    doc-expansion: none
+    groups-order: DESC
+    operationsSorter: alpha
+    tagsSorter: alpha
+    path: /swagger-ui.html
+    title: Portal Aluno
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
