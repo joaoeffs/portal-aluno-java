@@ -25,9 +25,9 @@ public interface NotasQueryRepository extends Repository<NotasQuery, UUID> {
         	n.situacao as situacao,
         	d.nome as nomeDisciplina
         from
-        	notas n
-        left join aluno_disciplina ad on
-        	n.aluno_disciplina_id = ad.id
+            aluno_disciplina ad
+        left join notas n on
+        	ad.id = n.aluno_disciplina_id
         left join disciplina d on
         	ad.disciplina_id = d.id
         left join usuario u on ad.aluno_id = u.id
