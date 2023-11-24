@@ -41,4 +41,11 @@ public class AlunoDisciplina {
         this.aluno = requireNonNull(builder.aluno);
         this.disciplina = requireNonNull(builder.disciplina);
     }
+
+    public static class AlunoAlreadyRegisteredException extends RuntimeException {
+        public AlunoAlreadyRegisteredException(String message) {
+            super(message);
+        }
+    }
+
 }

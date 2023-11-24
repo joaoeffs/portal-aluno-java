@@ -33,6 +33,7 @@ public class SecurityConfigurations {
                 .requestMatchers(HttpMethod.POST, "/api/auth").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/usuario").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/usuario").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/usuario/usuario").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/disciplina").permitAll()
                 .requestMatchers(HttpMethod.PUT, "/api/disciplina").hasRole("PROFESSOR")
                 .requestMatchers(HttpMethod.POST, "/api/alunodisciplina").hasRole("PROFESSOR")

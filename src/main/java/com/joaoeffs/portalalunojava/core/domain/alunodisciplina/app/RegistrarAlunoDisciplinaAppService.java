@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.model.AlunoDisciplina;
+import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.model.AlunoDisciplina.AlunoAlreadyRegisteredException;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.repository.AlunoDisciplinaDomainRepository;
 import com.joaoeffs.portalalunojava.core.domain.alunodisciplina.usecase.RegistrarAlunoDisciplinaUseCase;
 
@@ -20,6 +21,9 @@ public class RegistrarAlunoDisciplinaAppService implements RegistrarAlunoDiscipl
 
     @Override
     public UUID handle(RegistrarAlunoDisciplina command) {
+
+        if (repository.existsByAlunoAndDisciplina(command.getAluno(), command.getDisciplina()))
+            throw new AlunoAlreadyRegisteredException("Aluno já está vinculado a nessa disciplina");
 
         var alunoDisciplina = AlunoDisciplina.builder()
             .aluno(command.getAluno())
