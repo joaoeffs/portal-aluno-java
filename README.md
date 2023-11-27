@@ -91,14 +91,14 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
 Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para gerenciar o desenvolvimento de software. O FDD é uma metodologia que se concentra na entrega incremental e iterativa de funcionalidades específicas, o que nos permite atender de forma eficaz às necessidades do cliente e manter o controle do progresso do projeto.
 
 ## Pacotes de Entrega
-### Pacote 1: Arquitetura e Insfraestrutura do Projeto
+### Pacote 1: Arquitetura e Infraestrutura do Projeto
   1. Comunicação entre Backend e Frontend
   2. Organização do Código
   3. Documentação do Código
   4. Pipeline
   5. Monitoramento de Qualidade
 
-### Pacote 2: Disciplinas, Vinculos de alunos e Notas
+### Pacote 2: Disciplinas, Vínculos de alunos e Notas
   1. Registrar disciplinas
   2. Listar disciplinas
   3. Alterar disciplina
@@ -111,9 +111,6 @@ Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para ger
       
 ### Pacote 3: Autenticação e Registro dos Usuários
   1. Registrar usuário
-  2. Alterar usuário
-  3. Inativar usuário
-  4. Segurança e autenticação
-  5. Anonimização
+  2. Segurança e autenticação
 
 Para mais informações das tarefas e visualizar o andamento delas, entre no [Board.](https://joao-effting.atlassian.net/jira/software/projects/PA/boards/1)
