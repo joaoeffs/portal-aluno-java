@@ -134,4 +134,3 @@ Senha  -> admin
 Para realizar o login como ALUNO, informar:
 E-mail -> joaoeffting@gmail.com
 Senha  -> 1234
-
