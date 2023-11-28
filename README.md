@@ -133,3 +133,22 @@ Senha  -> admin </br>
 Para realizar o login como ALUNO, informar: </br>
 E-mail -> joaoeffting@gmail.com </br>
 Senha  -> 1234 </br>
+
+# Contribuir com o Projeto
+
+Caso você queria baixar o projeto na sua máquina local e subir o mesmo, afim de contribuir para melhorias ou para estudos academicos. Siga esses passos descritos abaixo.
+Obs.: Caso for contribuir, lembre de abrir um Pull Request para que a gente possa discutir as novas implementações.
+
+### Java / Spring Boot
+1. O primeiro passo é clonar o repositório, digite o comando: git clone https://github.com/joaoeffs/portal-aluno-java
+2. Instale o Java JDK 17. Você pode baixá-lo acessando esse https://www.oracle.com/java/technologies/downloads/#java17
+3. Define a variável de ambiente JAVA_HOME para o caminho onde o JDK está instalado.
+4. Baixe algum Ambiente de Desenvolvimento Integrado (IDE) de sua preferência, que pode ser o IntelliJ IDEA, Eclipse ou Spring Tool Suite.
+5. Adicione essa configuração nas suas Environment variables: -spring.profiles.active=dev
+6. Execute o projeto, procure a classe principal do Spring Boot, com @SpringBootApplication
+7. Após subir o projeto, o mesmo estará disponível na URL -> http://localhost:8080
+
+### Banco de Dados
+1. Baixe o banco de Dados PostgreSQL ou algum de sua preferência.
+2. Crie um novo Banco de Dados
+3. Configure a conexão no projeto no arquivo application-dev.yml.
