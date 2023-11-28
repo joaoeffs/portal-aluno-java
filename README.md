@@ -53,40 +53,36 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
 # Requisitos do Projeto
 **Requisitos Funcionais:**
 
-**1. Cadastro de Usuários**:
-   * **Descrição**: O sistema deve permitir que os usuários se cadastrem e façam login de forma segura, atribuindo-lhes funções de ADMINISTRADOR, PROFESSOR ou ALUNO.
+**1. Login de Usuários**:
+   * **Descrição**: O sistema deve permitir que os usuários façam login de forma segura, atribuindo-lhes funções de ADMIN, PROFESSOR ou ALUNO.
    * **Funcionalidades**:
-     * Registro de usuário.
      * Autenticação segura.
-     * Atribuição de funções (ADMINISTRADOR, PROFESSOR, ALUNO) durante o registro.
+     * Atribuição de funções (ADMIN, PROFESSOR, ALUNO) durante o acesso.
        
 **2. Cadastro de Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que professores criem disciplinas.
+   * **Descrição**: O sistema deve possibilitar que PROFESSOR criem disciplinas.
    * **Funcionalidades**:
      * Criação e alteração de disciplinas.
        
 **3. Vincular Alunos a Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que professores vinculem alunos a disciplinas.
+   * **Descrição**: O sistema deve possibilitar que PROFESSOR vinculem alunos a disciplinas.
    * **Funcionalidades**:
      * Adição de alunos a disciplinas específicas.
        
 **4. Registro de Notas:**
-   * **Descrição**: O sistema deve fornecer uma ferramenta para professores inserirem notas dos alunos em cada disciplina.
+   * **Descrição**: O sistema deve fornecer uma ferramenta para PROFESSOR inserirem notas dos alunos em cada disciplina.
    * **Funcionalidades**:
      * Painel de administração de notas.
      * Inserção de notas por disciplina.
        
 **5. Visualização de Notas:**
-   * **Descrição**: O sistema deve permitir que estudantes visualizem suas notas por disciplina, incluindo média parcial e final.
+   * **Descrição**: O sistema deve permitir que ALUNOS visualizem suas notas por disciplina, incluindo média parcial e final.
    * **Funcionalidades**:
      * Painel do aluno para visualização de notas.
    
 **Requisitos Não Funcionais:**
-
-**1. Segurança e Privacidade:**
-   * **Descrição:** O sistema deve garantir a segurança dos dados dos alunos e cumprir regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
      
-**2. Testes e Validação:**
+**1. Testes e Validação:**
    * **Descrição:** O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
 
 # Metodologia de Organização de Tarefas
