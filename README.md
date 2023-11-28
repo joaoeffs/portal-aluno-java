@@ -115,17 +115,7 @@ Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para ger
 
 Para mais informações das tarefas e visualizar o andamento delas, entre no [Board.](https://joao-effting.atlassian.net/jira/software/projects/PA/boards/1)
 
-# Documentação a parte
-## Repositório pro Front-End
-https://github.com/joaoeffs/portal-aluno-angular
-
-## Documentação (SWAGGER)
-http://54.233.105.41:8080/swagger-ui/index.html
-
-## SonarCloud (Análise de Código)
-https://sonarcloud.io/summary/overall?id=joaoeffs_portal-aluno-java
-
-## Acesso para a Aplicação em Produção
+# Acesso para a Aplicação em Produção
 http://portalalunoapp.s3-website-sa-east-1.amazonaws.com/login
 
 Para realizar o login como PROFESSOR, informar: </br>
