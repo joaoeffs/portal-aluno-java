@@ -114,3 +114,6 @@ Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para ger
   2. Segurança e autenticação
 
 Para mais informações das tarefas e visualizar o andamento delas, entre no [Board.](https://joao-effting.atlassian.net/jira/software/projects/PA/boards/1)
+
+# Acesso para a Aplicação em Produção
+[http://portalalunoapp.s3-website-sa-east-1.amazonaws.com/login]
