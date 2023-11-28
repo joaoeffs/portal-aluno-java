@@ -48,6 +48,8 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
   * Angular 13
   * Node
 
+  * Esse projeto tem repositório separados para Front e Back. Passa acessar o repositório do Front-End acessa esse [link.](https://github.com/joaoeffs/portal-aluno-angular)
+
 # Requisitos do Projeto
 **Requisitos Funcionais:**
 
