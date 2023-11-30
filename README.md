@@ -125,9 +125,14 @@ Para mais informações das tarefas e visualizar o andamento delas, entre no [Bo
 
 # Monitoramento
 
+### Monitoramento EC2
 ![Monitoramento EC2](https://github.com/joaoeffs/portal-aluno-java/assets/70415298/b901ae4c-3725-4863-bdc6-0e8f2cdef82a)
 
+### Monitoramento RDS
 ![Monitoramento RDS](https://github.com/joaoeffs/portal-aluno-java/assets/70415298/65c98006-74b6-4711-9f3b-780180d3d3b4)
+
+### Cobertura de Código
+![SonarCloud](https://github.com/joaoeffs/portal-aluno-java/assets/70415298/2bbc139b-09bd-46c3-8964-b43f02604f0e)
 
 Acesso para o [SonarCloud](https://sonarcloud.io/summary/overall?id=joaoeffs_portal-aluno-java).
 
