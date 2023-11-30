@@ -121,7 +121,15 @@ Para mais informações das tarefas e visualizar o andamento delas, entre no [Bo
   * RDS (Database)
 
 * Github Actions
-  * CI/CD  
+  * CI/CD
+
+# Monitoramento
+
+![Monitoramento EC2](https://github.com/joaoeffs/portal-aluno-java/assets/70415298/b901ae4c-3725-4863-bdc6-0e8f2cdef82a)
+
+![Monitoramento RDS](https://github.com/joaoeffs/portal-aluno-java/assets/70415298/65c98006-74b6-4711-9f3b-780180d3d3b4)
+
+Acesso para o [SonarCloud](https://sonarcloud.io/summary/overall?id=joaoeffs_portal-aluno-java).
 
 # Acesso para a Aplicação em Produção
 http://portalalunoapp.s3-website-sa-east-1.amazonaws.com/login
