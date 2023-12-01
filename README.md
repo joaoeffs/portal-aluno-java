@@ -6,8 +6,7 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
    * Desenvolvimento de um sistema de autenticação para os usuários.
    * Roles de acesso ( ADMINISTRADOR, PROFESSOR, ALUNO ).
 2. Cadastro Disciplinas:
-   * Implementação de funcionalidades para que os professores possam criar disciplinas e associnar alunos a elas.
-   * Permitir a adição de alunos a disciplina específicas.
+   * Implementação de funcionalidades para que os professores possam criar disciplinas.
 3. Vincular Alunos a Disciplinas:
    * Implementação de funcionalidade para que os professores consigam vincular os alunos a disciplinas que eles ministrarão.
 4. Cadastro de Notas:
@@ -18,7 +17,6 @@ Desenvolver um portal do aluno que permita o cadastro das notas dos estudantes e
    * Apresentação das notas por disciplina, com média parcial e final.
 6. Segurança e Privacidade:
    * Garantir a segurança dos dados dos alunos, implementando medidas de criptografia e autenticação segura.
-   * Cumprimento de regulamentações de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD).
 7. Testes e Validação:
    * Realizar testes unitários e de integração no sistema para garantir seu funcionamento adequado.
 
@@ -57,33 +55,46 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
    * **Descrição**: O sistema deve permitir que os usuários façam login de forma segura, atribuindo-lhes funções de ADMIN, PROFESSOR ou ALUNO.
    * **Funcionalidades**:
      * Autenticação segura.
-     * Atribuição de funções (ADMIN, PROFESSOR, ALUNO) durante o acesso.
+     * Gerenciamento de perfis de usuário (ADMIN, PROFESSOR, ALUNO) durante o acesso.
        
 **2. Cadastro de Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que PROFESSOR criem disciplinas.
+   * **Descrição**: O sistema deve possibilitar que PROFESSOR crie disciplinas.
    * **Funcionalidades**:
-     * Criação e alteração de disciplinas.
+     * Criação, alteração e gerenciamento de disciplinas.
        
 **3. Vincular Alunos a Disciplinas:**
-   * **Descrição**: O sistema deve possibilitar que PROFESSOR vinculem alunos a disciplinas.
+   * **Descrição**: O sistema deve possibilitar que PROFESSOR vincule alunos a disciplinas.
    * **Funcionalidades**:
-     * Adição de alunos a disciplinas específicas.
+     * Associação de alunos às disciplinas.
        
 **4. Registro de Notas:**
-   * **Descrição**: O sistema deve fornecer uma ferramenta para PROFESSOR inserirem notas dos alunos em cada disciplina.
+   * **Descrição**: O sistema deve fornecer uma ferramenta para PROFESSOR insera notas dos alunos em cada disciplina.
    * **Funcionalidades**:
-     * Painel de administração de notas.
-     * Inserção de notas por disciplina.
+     * Painel de administração de notas para professores registrarem as notas dos alunos.
+     * Funcionalidade de adicionar notas por disciplina.
        
 **5. Visualização de Notas:**
    * **Descrição**: O sistema deve permitir que ALUNOS visualizem suas notas por disciplina, incluindo média parcial e final.
    * **Funcionalidades**:
      * Painel do aluno para visualização de notas.
+     * Apresentação das notas por disciplina, incluindo médias parciais e finais.
    
 **Requisitos Não Funcionais:**
+
+**1. Segurança:**
+    * **Descrição:** Implementação de criptografia e autenticação segura para proteger os dados dos usuários.
      
-**1. Testes e Validação:**
-   * **Descrição:** O sistema deve ter testes unitários e de integração para garantir seu funcionamento adequado.
+**2. Testes e Validação:**
+   * **Descrição:** Realização de testes unitários e de integração para garantir a funcionalidade e confiabilidade do sistema.
+
+**3. Desempenho e Escalabilidade:**
+   * **Descrição:** O sistema deve ser capaz de lidar com um grande número de usuários e dados sem comprometer o desempenho.
+     
+**4. Usabilidade:**
+   * **Descrição:** Interface de usuário intuitiva e fácil de navegar para todos os tipos de usuários (ADMIN, PROFESSOR e ALUNOS).
+
+**5. Manutenção e Suporte:**
+   * **Descrição:** O sistema deve ser fácil de manter e atualizar.
 
 # Metodologia de Organização de Tarefas
 Neste projeto, adotamos a abordagem do FDD (Feature Driven Development) para gerenciar o desenvolvimento de software. O FDD é uma metodologia que se concentra na entrega incremental e iterativa de funcionalidades específicas, o que nos permite atender de forma eficaz às necessidades do cliente e manter o controle do progresso do projeto.
