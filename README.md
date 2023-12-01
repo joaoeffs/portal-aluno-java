@@ -51,7 +51,7 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
 # Requisitos do Projeto
 **Requisitos Funcionais:**
 
-**1. Login de Usuários**:
+**1. Login de Usuários:**
    * **Descrição**: O sistema deve permitir que os usuários façam login de forma segura, atribuindo-lhes funções de ADMIN, PROFESSOR ou ALUNO.
    * **Funcionalidades**:
      * Autenticação segura.
