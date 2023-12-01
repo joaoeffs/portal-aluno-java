@@ -82,7 +82,7 @@ A modelagem da arquitetura do projeto você pode encontrar aqui, acessando o [li
 **Requisitos Não Funcionais:**
 
 **1. Segurança:**
-    * **Descrição:** Implementação de criptografia e autenticação segura para proteger os dados dos usuários.
+   * **Descrição:** Implementação de criptografia e autenticação segura para proteger os dados dos usuários.
      
 **2. Testes e Validação:**
    * **Descrição:** Realização de testes unitários e de integração para garantir a funcionalidade e confiabilidade do sistema.
